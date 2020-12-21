@@ -1,4 +1,4 @@
-const conn = require('../connection.js');
+const conn = require('./connection.js');
 
 module.exports.getLocInfo = function getLocInfo(loc_id, callback) {
   conn.dbConn.query('SELECT * FROM locations WHERE id = ?', [loc_id], (err, res) => {

@@ -64,11 +64,22 @@ class Block extends React.Component {
   }
 
   getVisualBlock() {
+    // check if this should be highlighted
+    let isPath = false;
+    for (let i = 0; i < this.props.path.length; i++) {
+      if (this.props.path[i].x === this.state.x && this.props.path[i].y === this.state.y) {
+        isPath = true;
+        break;
+      }
+    }
+
     if (this.state.id !== null) {
       return (<div className={styles.mapBlockUnwalkable}></div>);
     } else {
       if (this.props.x === this.props.youreHere.x && this.props.y === this.props.youreHere.y) {
         return (<div className={styles.youreHere}></div>);
+      } else if (isPath) {
+        return (<div className={styles.mapBlockPath}></div>);
       } else {
         return (<div className={styles.mapBlockWalkable}></div>);
       }

@@ -1,4 +1,4 @@
-.mapBlock, .mapBlockUnwalkable, .mapBlockWalkable, .youreHere {
+.mapBlock, .mapBlockUnwalkable, .mapBlockWalkable, .youreHere, .mapBlockPath {
   display: inline-block;
   width: 4em;
   height: 4em;
@@ -14,6 +14,10 @@
 
 .mapBlockUnwalkable:hover {
   background-color: greenyellow;
+}
+
+.mapBlockPath {
+  background-color: yellow;
 }
 
 .mapBlockWalkable:hover {
