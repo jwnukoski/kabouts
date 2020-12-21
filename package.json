@@ -1,0 +1,43 @@
+{
+  "name": "kabouts",
+  "version": "1.0.0",
+  "description": "Kiosk Whereabouts",
+  "author": "jwnukoski",
+  "engines": {
+    "node": ">=6.13.0"
+  },
+  "main": "client/electron.js",
+  "scripts": {
+    "server": "node server/index.js",
+    "server-dev": "nodemon server/index.js",
+    "client": "webpack -d --watch",
+    "start": "electron ."
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.5",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-react-css-modules": "^5.2.6",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^5.0.1",
+    "electron": "^11.1.0",
+    "faker": "^5.1.0",
+    "nodemon": "^2.0.6",
+    "react-css-modules": "^4.7.11",
+    "style-loader": "^2.0.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^4.2.0"
+  }
+}

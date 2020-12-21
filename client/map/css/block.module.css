@@ -1,0 +1,25 @@
+.mapBlock, .mapBlockUnwalkable, .mapBlockWalkable, .youreHere {
+  display: inline-block;
+  width: 4em;
+  height: 4em;
+}
+
+.mapBlock {
+  border: 1px solid black;
+}
+
+.mapBlockUnwalkable {
+  background-color: teal;
+}
+
+.mapBlockUnwalkable:hover {
+  background-color: greenyellow;
+}
+
+.mapBlockWalkable:hover {
+  background-color: grey;
+}
+
+.youreHere {
+  background-color: red;
+}
