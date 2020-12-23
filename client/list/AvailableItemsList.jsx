@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import styles from './css/list.module.css';
 
 // component did mount
 class AvailableItemsList extends React.Component {
@@ -17,8 +18,9 @@ class AvailableItemsList extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Available Items:</h2>
+      <div className={styles.availableItemsList}>
+        <h2>Available Items</h2>
+        <button onClick={this.handleSubmit} className={styles.addBtn}>Add</button>
         <select id="items">
           {
             this.props.items.map((item, index) => {
@@ -26,7 +28,6 @@ class AvailableItemsList extends React.Component {
             })
           }
         </select>
-        <button onClick={this.handleSubmit}>Add</button>
       </div>
 
     );

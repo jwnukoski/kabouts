@@ -11,7 +11,6 @@ class Map extends React.Component {
     super(props);
 
     this.state = {
-      youreHere: {x: 0, y: 0},
       path: [],
       currentItem: -1
     };
@@ -34,7 +33,7 @@ class Map extends React.Component {
       // update youre here to last location
       let lastGrid;
       if (this.state.path.length <= 0) {
-        lastGrid = this.state.youreHere;
+        lastGrid = this.props.youreHere;
       } else {
         lastGrid = this.state.path[this.state.path.length - 1];
       }
@@ -44,8 +43,8 @@ class Map extends React.Component {
 
       const newPath = this.getPath(newX, newY, this.props.chosenItems[currItem].x, this.props.chosenItems[currItem].y);
 
+      this.props.setYoureHere(newX, newY);
       this.setState({currentItem: currItem,
-        youreHere: {x: newX, y: newY},
         path: newPath
       });
     }
@@ -85,7 +84,7 @@ class Map extends React.Component {
       const rowChildren = [];
 
       for (let x = 0; x < mapX; x++) {
-        const block = (<Block x={x} y={y} location={this.props.location} youreHere={this.state.youreHere} path={this.state.path}/>);
+        const block = (<Block x={x} y={y} location={this.props.location} youreHere={this.props.youreHere} path={this.state.path}/>);
         rowChildren.push(block);
       }
 

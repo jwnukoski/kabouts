@@ -22,7 +22,7 @@ class List extends React.Component {
 
   getDoneBtn() {
     if (this.props.chosenItems.length > 0) {
-      return (<button onClick={this.handleDoneClick}>To Map</button>);
+      return (<button className={styles.toMapBtn} onClick={this.handleDoneClick}>View Map</button>);
     } else {
       return (<div></div>);
     }
@@ -32,8 +32,8 @@ class List extends React.Component {
     return (
       <div className={styles.list}>
         <AvailableItemsList items={this.props.items} addChosenItem={this.props.addChosenItem}/>
-        <ChosenItems chosenItems={this.props.chosenItems}/>
         {this.getDoneBtn()}
+        <ChosenItems chosenItems={this.props.chosenItems} removeChosenItem={this.props.removeChosenItem}/>
       </div>
     );
   }

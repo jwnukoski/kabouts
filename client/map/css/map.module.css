@@ -6,4 +6,7 @@
 
 .mapRow {
   display: block;
+  padding: 0;
+  margin: 0;
+  height: 4em;
 }

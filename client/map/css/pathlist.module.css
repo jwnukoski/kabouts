@@ -1,3 +1,14 @@
-.pathList {
+.pathList button {
+  border: 0;
+  border-radius: 4px;
+  font-weight: bold;
+  padding: 1em;
+  background-color: #2CC185;
+  color: white;
+  margin-right: 2em;
+}
 
+.nextItemName {
+  font-weight: bolder;
+  padding: 1em;
 }

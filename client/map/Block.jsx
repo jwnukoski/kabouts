@@ -77,7 +77,7 @@ class Block extends React.Component {
       return (<div className={styles.mapBlockUnwalkable}></div>);
     } else {
       if (this.props.x === this.props.youreHere.x && this.props.y === this.props.youreHere.y) {
-        return (<div className={styles.youreHere}></div>);
+        return (<div className={styles.youreHere}>You're here</div>);
       } else if (isPath) {
         return (<div className={styles.mapBlockPath}></div>);
       } else {

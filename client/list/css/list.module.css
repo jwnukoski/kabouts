@@ -1,3 +1,46 @@
-.list {
+.list, .chosenItems {
+  text-align: center;
+}
 
+h2 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #323232;
+  border-radius:  8px;
+  padding: 1em;
+  max-width: 50%;
+  margin: 0 auto 1em auto;
+}
+
+.deleteBtn, .toMapBtn, .addBtn, .list select {
+  border: 0;
+  border-radius: 4px;
+  font-weight: bold;
+  padding: 1em;
+}
+
+.deleteBtn, .toMapBtn, .addBtn {
+  background-color: #2CC185;
+  color: white;
+}
+
+.addBtn, .deleteBtn {
+  margin-right: 2em;
+}
+
+.availableItemsList {
+  margin-bottom: 4em;
+}
+
+.chosenItems h2 {
+  margin-top: 4em;
+}
+
+.chosenItems ul {
+  list-style: none;
+}
+
+.chosenItems ul li {
+  padding: 1em 0 1em 0;
+  text-align: left;
 }
