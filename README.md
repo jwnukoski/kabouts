@@ -16,7 +16,7 @@ To connect to your own server modify the file: client/connection.js
 npm run client (build the bundle.js file)
 
 ### Electron packaging
-npm install -g electron-packager --save-dev
+npm install -g electron-packager
 electron-packager ./kabouts/ kabouts --platform=linux --arch=x64
 electron-packager ./kabouts/ kabouts --platform=win32 --arch=x64
 electron-packager ./kabouts/ kabouts --platform=darwin --arch=x64
