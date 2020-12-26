@@ -3,9 +3,11 @@ const app = express();
 const cors = require('cors');
 const db = require('./database.js');
 const conn = require('./connection.js');
-
+const path = require('path');
 
 app.use(cors());
+
+app.use('/', express.static(path.join(__dirname, 'public')));
 
 app.get('/api/location/:loc_id/items', (req, res) => {
   const loc = req.params.loc_id;
