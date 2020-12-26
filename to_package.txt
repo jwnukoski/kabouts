@@ -1,4 +1,0 @@
-npm install -g electron-packager --save-dev
-electron-packager ./kabouts/ kabouts --platform=linux --arch=x64
-electron-packager ./kabouts/ kabouts --platform=win32 --arch=x64
-electron-packager ./kabouts/ kabouts --platform=darwin --arch=x64
