@@ -5,6 +5,12 @@ Kiosk Whereabouts
 ### Running
 npm run server
 
+### SQL Schema
+mariadb -u root < schema_mariadb.sql
+
+#### Sample Data:
+mysql kabouts < example_data.sql
+
 ### Connection
 To connect to your own database modify the file: server/connection.js
 
