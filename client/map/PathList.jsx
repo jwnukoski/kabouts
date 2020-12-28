@@ -17,16 +17,16 @@ class PathList extends React.Component {
   }
 
   render() {
-    let nextItemName = (<span></span>);
+    let nextItemName = (<p>Click next to start</p>);
     if (this.props.chosenItems !== undefined && this.props.currentItem >= 0) {
-      nextItemName = (<span>{this.props.chosenItems[this.props.currentItem].info}</span>);
+      nextItemName = (<p>Showing path to: <span>{this.props.chosenItems[this.props.currentItem].info}</span></p>);
     }
 
     return (
       <div className={styles.pathList}>
         <button onClick={this.handleBackBtn}>Back to List</button>
         <button onClick={this.handleNextBtn}>Next</button>
-        <span className={styles.nextItemName}>{nextItemName}</span>
+        {nextItemName}
       </div>
     );
   }

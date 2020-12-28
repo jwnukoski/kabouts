@@ -1341,14 +1341,15 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, "._2oIQwenOT5Biv-TonKchXB, ._3n8VNCc7GYl4uHLb0ZVEli, ._297eeCHoi2mNLZPqSyEfH1, .h9T6Y_noIDFO_v5t_SPmj, ._2zrerClgXjfuMVlYHz83ib {\n  display: inline-block;\n  width: 4em;\n  height: 4em;\n  overflow: hidden;\n  padding: 0;\n  margin: 0;\n}\n\n/*.mapBlock {}*/\n\n._3n8VNCc7GYl4uHLb0ZVEli {\n  background-color: #323232;\n  border: 1px solid grey;\n}\n\n._2zrerClgXjfuMVlYHz83ib {\n  background-color: #3e98d1;\n}\n\n.h9T6Y_noIDFO_v5t_SPmj {\n  background-color: #d13e3e;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, "._2oIQwenOT5Biv-TonKchXB, ._3n8VNCc7GYl4uHLb0ZVEli, ._297eeCHoi2mNLZPqSyEfH1, .h9T6Y_noIDFO_v5t_SPmj, ._2zrerClgXjfuMVlYHz83ib, ._2gWM6YL5wpOyLtcE5jpNty {\n  display: inline-block;\n  width: 64px;\n  height: 64px;\n  overflow: hidden;\n  padding: 0;\n  margin: 0;\n}\n\n/*.mapBlock {}*/\n\n._3n8VNCc7GYl4uHLb0ZVEli {\n  background-color: #323232;\n  border: 1px solid grey;\n}\n\n._3n8VNCc7GYl4uHLb0ZVEli:hover {\n  background-color: #686868;\n}\n\n._2zrerClgXjfuMVlYHz83ib {\n  background-color: #3e98d1;\n}\n\n.h9T6Y_noIDFO_v5t_SPmj {\n  background-color: #d13e3e;\n}\n\n._2gWM6YL5wpOyLtcE5jpNty {\n  background-color: yellow;\n  text-align: center;\n  padding-top: 1.25em;\n  font-weight: bold;\n}", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"mapBlock": "_2oIQwenOT5Biv-TonKchXB",
 	"mapBlockUnwalkable": "_3n8VNCc7GYl4uHLb0ZVEli",
 	"mapBlockWalkable": "_297eeCHoi2mNLZPqSyEfH1",
 	"youreHere": "h9T6Y_noIDFO_v5t_SPmj",
-	"mapBlockPath": "_2zrerClgXjfuMVlYHz83ib"
+	"mapBlockPath": "_2zrerClgXjfuMVlYHz83ib",
+	"itemHere": "_2gWM6YL5wpOyLtcE5jpNty"
 };
 /* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
 
@@ -1364,7 +1365,7 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, "._1-mdAFbH8lVhW5j0r-IL_S button {\n  border: 0;\n  border-radius: 4px;\n  font-weight: bold;\n  padding: 1em;\n  background-color: #2CC185;\n  color: white;\n  margin-right: 2em;\n}\n\n.GjVgccV5O1zJjMmBcqzVU {\n  font-weight: bolder;\n  padding: 1em;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, "._1-mdAFbH8lVhW5j0r-IL_S {\n  text-align: center;\n}\n\n._1-mdAFbH8lVhW5j0r-IL_S button {\n  border: 0;\n  border-radius: 4px;\n  font-weight: bold;\n  padding: 1em;\n  background-color: #2CC185;\n  color: white;\n  margin-right: 2em;\n}\n\n.GjVgccV5O1zJjMmBcqzVU {\n  font-weight: bolder;\n  padding: 1em;\n}", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"pathList": "_1-mdAFbH8lVhW5j0r-IL_S",
@@ -3831,6 +3832,8 @@ var Block_Block = /*#__PURE__*/function (_React$Component) {
     _this.getItems = _this.getItems.bind(Block_assertThisInitialized(_this));
     _this.getBlockData = _this.getBlockData.bind(Block_assertThisInitialized(_this));
     _this.getVisualBlock = _this.getVisualBlock.bind(Block_assertThisInitialized(_this));
+    _this.mouseOut = _this.mouseOut.bind(Block_assertThisInitialized(_this));
+    _this.mouseOver = _this.mouseOver.bind(Block_assertThisInitialized(_this));
     return _this;
   }
 
@@ -3904,24 +3907,66 @@ var Block_Block = /*#__PURE__*/function (_React$Component) {
       }
 
       if (this.state.id !== null) {
+        ; // where the item is
+
+        if (this.props.path.length > 0) {
+          var itemBlock = this.props.path[this.props.path.length - 1];
+
+          if (itemBlock.x === this.state.x && itemBlock.y === this.state.y) {
+            return /*#__PURE__*/react_default.a.createElement("div", {
+              className: css_block_module.itemHere,
+              onMouseEnter: this.mouseOver,
+              onMouseLeave: this.mouseOut
+            }, "X");
+          }
+        } // any other unwalkable area
+
+
         return /*#__PURE__*/react_default.a.createElement("div", {
-          className: css_block_module.mapBlockUnwalkable
+          className: css_block_module.mapBlockUnwalkable,
+          onMouseEnter: this.mouseOver,
+          onMouseLeave: this.mouseOut
         });
       } else {
         if (this.props.x === this.props.youreHere.x && this.props.y === this.props.youreHere.y) {
+          // youre here
           return /*#__PURE__*/react_default.a.createElement("div", {
             className: css_block_module.youreHere
           }, "You're here");
         } else if (isPath) {
+          // walkable path
           return /*#__PURE__*/react_default.a.createElement("div", {
             className: css_block_module.mapBlockPath
           });
         } else {
+          // regular empty space
           return /*#__PURE__*/react_default.a.createElement("div", {
             className: css_block_module.mapBlockWalkable
           });
         }
       }
+    }
+  }, {
+    key: "mouseOver",
+    value: function mouseOver() {
+      if (this.state.items.length <= 0) {
+        return;
+      } // build msg
+
+
+      var maxItems = 5;
+      var msg = '';
+
+      for (var i = 0; i < this.state.items.length && i < maxItems; i++) {
+        msg += "".concat(this.state.items[i].info, "\n");
+      }
+
+      this.props.setHint(true, this.state.x, this.state.y, msg);
+    }
+  }, {
+    key: "mouseOut",
+    value: function mouseOut() {
+      this.props.setHint(false, 0, 0, '');
     }
   }, {
     key: "render",
@@ -4012,10 +4057,10 @@ var PathList_PathList = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var nextItemName = /*#__PURE__*/react_default.a.createElement("span", null);
+      var nextItemName = /*#__PURE__*/react_default.a.createElement("p", null, "Click next to start");
 
       if (this.props.chosenItems !== undefined && this.props.currentItem >= 0) {
-        nextItemName = /*#__PURE__*/react_default.a.createElement("span", null, this.props.chosenItems[this.props.currentItem].info);
+        nextItemName = /*#__PURE__*/react_default.a.createElement("p", null, "Showing path to: ", /*#__PURE__*/react_default.a.createElement("span", null, this.props.chosenItems[this.props.currentItem].info));
       }
 
       return /*#__PURE__*/react_default.a.createElement("div", {
@@ -4024,9 +4069,7 @@ var PathList_PathList = /*#__PURE__*/function (_React$Component) {
         onClick: this.handleBackBtn
       }, "Back to List"), /*#__PURE__*/react_default.a.createElement("button", {
         onClick: this.handleNextBtn
-      }, "Next"), /*#__PURE__*/react_default.a.createElement("span", {
-        className: css_pathlist_module.nextItemName
-      }, nextItemName));
+      }, "Next"), nextItemName);
     }
   }]);
 
@@ -4034,6 +4077,94 @@ var PathList_PathList = /*#__PURE__*/function (_React$Component) {
 }(react_default.a.Component);
 
 /* harmony default export */ var map_PathList = (PathList_PathList);
+// CONCATENATED MODULE: ./client/map/Hint.jsx
+function Hint_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Hint_typeof = function _typeof(obj) { return typeof obj; }; } else { Hint_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Hint_typeof(obj); }
+
+function Hint_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Hint_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function Hint_createClass(Constructor, protoProps, staticProps) { if (protoProps) Hint_defineProperties(Constructor.prototype, protoProps); if (staticProps) Hint_defineProperties(Constructor, staticProps); return Constructor; }
+
+function Hint_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) Hint_setPrototypeOf(subClass, superClass); }
+
+function Hint_setPrototypeOf(o, p) { Hint_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return Hint_setPrototypeOf(o, p); }
+
+function Hint_createSuper(Derived) { var hasNativeReflectConstruct = Hint_isNativeReflectConstruct(); return function _createSuperInternal() { var Super = Hint_getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = Hint_getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Hint_possibleConstructorReturn(this, result); }; }
+
+function Hint_possibleConstructorReturn(self, call) { if (call && (Hint_typeof(call) === "object" || typeof call === "function")) { return call; } return Hint_assertThisInitialized(self); }
+
+function Hint_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function Hint_isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function Hint_getPrototypeOf(o) { Hint_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return Hint_getPrototypeOf(o); }
+
+
+
+var Hint_Hint = /*#__PURE__*/function (_React$Component) {
+  Hint_inherits(Hint, _React$Component);
+
+  var _super = Hint_createSuper(Hint);
+
+  function Hint(props) {
+    var _this;
+
+    Hint_classCallCheck(this, Hint);
+
+    _this = _super.call(this, props);
+    _this.getBlock = _this.getBlock.bind(Hint_assertThisInitialized(_this));
+    return _this;
+  }
+
+  Hint_createClass(Hint, [{
+    key: "getBlock",
+    value: function getBlock() {
+      if (this.props.data.visible) {
+        return /*#__PURE__*/react_default.a.createElement("div", null, this.props.data.msg);
+      } else {
+        return /*#__PURE__*/react_default.a.createElement("span", null);
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var hintStyle = {
+        display: 'none',
+        position: 'relative',
+        width: '0px',
+        height: '0px'
+      };
+
+      if (this.props.data.visible) {
+        hintStyle = {
+          backgroundColor: 'rgba(175, 175, 175, 0.9)',
+          zIndex: '1000',
+          position: 'absolute',
+          width: '192px',
+          height: '64px',
+          overflow: 'hidden',
+          padding: '8px',
+          borderRadius: '8px',
+          textAlign: 'center',
+          display: 'block',
+          border: '1px solid black',
+          fontWeight: 'bold',
+          left: "".concat(this.props.data.x * 64, "px"),
+          top: "".concat(this.props.data.y * 64, "px")
+        };
+      }
+
+      return /*#__PURE__*/react_default.a.createElement("div", {
+        style: hintStyle
+      }, this.getBlock());
+    }
+  }]);
+
+  return Hint;
+}(react_default.a.Component);
+
+/* harmony default export */ var map_Hint = (Hint_Hint);
 // CONCATENATED MODULE: ./client/map/Map.jsx
 function Map_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Map_typeof = function _typeof(obj) { return typeof obj; }; } else { Map_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Map_typeof(obj); }
 
@@ -4065,6 +4196,7 @@ function Map_getPrototypeOf(o) { Map_getPrototypeOf = Object.setPrototypeOf ? Ob
 
 
 
+
 var Map_Map = /*#__PURE__*/function (_React$Component) {
   Map_inherits(Map, _React$Component);
 
@@ -4078,14 +4210,21 @@ var Map_Map = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this, props);
     _this.state = {
       path: [],
-      currentItem: -1
+      currentItem: -1,
+      hint: {
+        x: 0,
+        y: 0,
+        msg: '',
+        visible: false
+      }
     };
     _this.pathed = false; // test only
 
     _this.createMap = _this.createMap.bind(Map_assertThisInitialized(_this));
     _this.getPath = _this.getPath.bind(Map_assertThisInitialized(_this));
     _this.getBinaryMap = _this.getBinaryMap.bind(Map_assertThisInitialized(_this));
-    _this.nextItem = _this.nextItem.bind(Map_assertThisInitialized(_this)); // for path finding, only needs to currently run once
+    _this.nextItem = _this.nextItem.bind(Map_assertThisInitialized(_this));
+    _this.setHint = _this.setHint.bind(Map_assertThisInitialized(_this)); // for path finding, only needs to currently run once
 
     _this.binaryMap = _this.getBinaryMap();
     return _this;
@@ -4100,10 +4239,11 @@ var Map_Map = /*#__PURE__*/function (_React$Component) {
 
         var lastGrid;
 
-        if (this.state.path.length <= 0) {
+        if (this.state.path.length <= 1) {
           lastGrid = this.props.youreHere;
         } else {
-          lastGrid = this.state.path[this.state.path.length - 1];
+          // -2 as the last item in path should be an unwalkable area
+          lastGrid = this.state.path[this.state.path.length - 2];
         }
 
         var newX = lastGrid.x;
@@ -4121,7 +4261,8 @@ var Map_Map = /*#__PURE__*/function (_React$Component) {
     value: function getPath(startX, startY, targetX, targetY) {
       // finds and returns grid elements to location
       var graph = this.binaryMap;
-      var start = graph.grid[startX][startY]; // find nearest open square if the target location is not walkable
+      var start = graph.grid[startX][startY];
+      var itemBlock = graph.grid[targetX][targetY]; // find nearest open square if the target location is not walkable. astar wont work if destination is not walkable
 
       if (graph.grid[targetX][targetY].weight !== 1) {
         if (graph.grid[targetX][targetY - 1].weight === 1) {
@@ -4136,7 +4277,9 @@ var Map_Map = /*#__PURE__*/function (_React$Component) {
       }
 
       var end = graph.grid[targetX][targetY];
-      var result = astar["astar"].search(graph, start, end);
+      var result = astar["astar"].search(graph, start, end); // add the original item location for highlighting later
+
+      result.push(itemBlock);
       return result;
     }
   }, {
@@ -4156,7 +4299,8 @@ var Map_Map = /*#__PURE__*/function (_React$Component) {
             y: y,
             location: this.props.location,
             youreHere: this.props.youreHere,
-            path: this.state.path
+            path: this.state.path,
+            setHint: this.setHint
           });
           rowChildren.push(block);
         }
@@ -4209,21 +4353,48 @@ var Map_Map = /*#__PURE__*/function (_React$Component) {
         return;
       }).then(function () {
         _this2.binaryMap = new astar["Graph"](binaryMap);
-
-        _this2.getPath();
       })["catch"](function (err) {});
+    }
+  }, {
+    key: "setHint",
+    value: function setHint() {
+      var visible = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.state.hint.visible;
+      var x = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.state.hint.x;
+      var y = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : this.state.hint.y;
+      var msg = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : this.state.hint.msg;
+      var newX = x;
+      var newY = y;
+      var newMsg = msg;
+      var newVisible = visible;
+      var currentX = this.state.hint.x;
+      var currentY = this.state.hint.y;
+      var currentMsg = this.state.hint.msg;
+      var currentVisible = this.state.hint.visible; // only update if theres a change
+
+      if (newX !== currentX || newY !== currentY || newMsg !== currentMsg || currentVisible !== currentVisible) {
+        this.setState({
+          hint: {
+            x: newX,
+            y: newY,
+            msg: newMsg,
+            visible: newVisible
+          }
+        });
+      }
     }
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement(map_PathList, {
+      return /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement(map_Hint, {
+        data: this.state.hint
+      }), /*#__PURE__*/react_default.a.createElement("div", {
+        className: css_map_module.map
+      }, this.createMap()), /*#__PURE__*/react_default.a.createElement(map_PathList, {
         chosenItems: this.props.chosenItems,
         currentItem: this.state.currentItem,
         nextItem: this.nextItem,
         changePage: this.props.changePage
-      }), /*#__PURE__*/react_default.a.createElement("div", {
-        className: css_map_module.map
-      }, this.createMap()));
+      }));
     }
   }]);
 
@@ -4416,6 +4587,10 @@ var App_App = /*#__PURE__*/function (_React$Component) {
       this.setState({
         page: pageId
       });
+
+      if (pageId === 0) {
+        this.setYoureHere(0, 0);
+      }
     }
   }, {
     key: "getPage",

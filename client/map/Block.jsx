@@ -19,6 +19,9 @@ class Block extends React.Component {
     this.getItems = this.getItems.bind(this);
     this.getBlockData = this.getBlockData.bind(this);
     this.getVisualBlock = this.getVisualBlock.bind(this);
+
+    this.mouseOut = this.mouseOut.bind(this);
+    this.mouseOver = this.mouseOver.bind(this);
   }
 
   getId() {
@@ -73,17 +76,48 @@ class Block extends React.Component {
       }
     }
 
-    if (this.state.id !== null) {
-      return (<div className={styles.mapBlockUnwalkable}></div>);
+    if (this.state.id !== null) {;
+      // where the item is
+        if (this.props.path.length > 0) {
+          const itemBlock = this.props.path[this.props.path.length - 1];
+          if (itemBlock.x === this.state.x && itemBlock.y === this.state.y) {
+            return (<div className={styles.itemHere} onMouseEnter={this.mouseOver} onMouseLeave={this.mouseOut}>X</div>);
+          }
+        }
+
+        // any other unwalkable area
+        return (<div className={styles.mapBlockUnwalkable} onMouseEnter={this.mouseOver} onMouseLeave={this.mouseOut}></div>);
     } else {
       if (this.props.x === this.props.youreHere.x && this.props.y === this.props.youreHere.y) {
+        // youre here
         return (<div className={styles.youreHere}>You're here</div>);
       } else if (isPath) {
+        // walkable path
         return (<div className={styles.mapBlockPath}></div>);
       } else {
+        // regular empty space
         return (<div className={styles.mapBlockWalkable}></div>);
       }
     }
+  }
+
+  mouseOver() {
+    if (this.state.items.length <= 0) {
+      return;
+    }
+
+    // build msg
+    const maxItems = 5;
+    let msg = '';
+    for (let i = 0; i < this.state.items.length && i < maxItems; i++) {
+      msg += `${this.state.items[i].info}\n`;
+    }
+
+    this.props.setHint(true, this.state.x, this.state.y, msg);
+  }
+
+  mouseOut() {
+    this.props.setHint(false, 0, 0, '');
   }
 
   render() {

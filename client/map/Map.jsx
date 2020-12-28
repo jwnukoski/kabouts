@@ -5,6 +5,7 @@ import styles from './css/map.module.css'
 import conn from '../connection.js';
 import Block from './Block.jsx';
 import PathList from './PathList.jsx';
+import Hint from './Hint.jsx';
 
 class Map extends React.Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class Map extends React.Component {
 
     this.state = {
       path: [],
-      currentItem: -1
+      currentItem: -1,
+      hint: {x: 0, y: 0, msg: '', visible: false}
     };
 
     this.pathed = false; // test only
@@ -20,6 +22,7 @@ class Map extends React.Component {
     this.getPath = this.getPath.bind(this);
     this.getBinaryMap = this.getBinaryMap.bind(this);
     this.nextItem = this.nextItem.bind(this);
+    this.setHint = this.setHint.bind(this);
 
     // for path finding, only needs to currently run once
     this.binaryMap = this.getBinaryMap();
@@ -32,10 +35,11 @@ class Map extends React.Component {
 
       // update youre here to last location
       let lastGrid;
-      if (this.state.path.length <= 0) {
+      if (this.state.path.length <= 1) {
         lastGrid = this.props.youreHere;
       } else {
-        lastGrid = this.state.path[this.state.path.length - 1];
+        // -2 as the last item in path should be an unwalkable area
+        lastGrid = this.state.path[this.state.path.length - 2];
       }
 
       const newX = lastGrid.x;
@@ -54,8 +58,9 @@ class Map extends React.Component {
     // finds and returns grid elements to location
     const graph = this.binaryMap;
     const start = graph.grid[startX][startY];
+    const itemBlock = graph.grid[targetX][targetY];
 
-    // find nearest open square if the target location is not walkable
+    // find nearest open square if the target location is not walkable. astar wont work if destination is not walkable
     if (graph.grid[targetX][targetY].weight !== 1) {
       if (graph.grid[targetX][targetY - 1].weight === 1) {
         targetY -= 1;
@@ -71,6 +76,9 @@ class Map extends React.Component {
     const end = graph.grid[targetX][targetY];
     const result = astar.search(graph, start, end);
 
+    // add the original item location for highlighting later
+    result.push(itemBlock);
+
     return result;
   }
 
@@ -84,7 +92,7 @@ class Map extends React.Component {
       const rowChildren = [];
 
       for (let x = 0; x < mapX; x++) {
-        const block = (<Block x={x} y={y} location={this.props.location} youreHere={this.props.youreHere} path={this.state.path}/>);
+        const block = (<Block x={x} y={y} location={this.props.location} youreHere={this.props.youreHere} path={this.state.path} setHint={this.setHint}/>);
         rowChildren.push(block);
       }
 
@@ -130,17 +138,34 @@ class Map extends React.Component {
       return;
     }).then(() => {
       this.binaryMap = new Graph(binaryMap);
-      this.getPath();
     }).catch(err => {});
+  }
+
+  setHint(visible = this.state.hint.visible, x = this.state.hint.x, y = this.state.hint.y, msg = this.state.hint.msg) {
+    const newX = x;
+    const newY = y;
+    const newMsg = msg;
+    const newVisible = visible;
+
+    const currentX = this.state.hint.x;
+    const currentY = this.state.hint.y;
+    const currentMsg = this.state.hint.msg;
+    const currentVisible = this.state.hint.visible;
+
+    // only update if theres a change
+    if (newX !== currentX || newY !== currentY || newMsg !== currentMsg || currentVisible !== currentVisible) {
+      this.setState({hint: {x: newX, y: newY, msg: newMsg, visible: newVisible}});
+    }
   }
 
   render() {
     return (
       <div>
-        <PathList chosenItems={this.props.chosenItems} currentItem={this.state.currentItem} nextItem={this.nextItem} changePage={this.props.changePage}/>
+        <Hint data={this.state.hint}/>
         <div className={styles.map}>
           {this.createMap()}
         </div>
+        <PathList chosenItems={this.props.chosenItems} currentItem={this.state.currentItem} nextItem={this.nextItem} changePage={this.props.changePage}/>
       </div>
     );
   }

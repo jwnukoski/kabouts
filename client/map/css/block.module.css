@@ -1,7 +1,7 @@
-.mapBlock, .mapBlockUnwalkable, .mapBlockWalkable, .youreHere, .mapBlockPath {
+.mapBlock, .mapBlockUnwalkable, .mapBlockWalkable, .youreHere, .mapBlockPath, .itemHere {
   display: inline-block;
-  width: 4em;
-  height: 4em;
+  width: 64px;
+  height: 64px;
   overflow: hidden;
   padding: 0;
   margin: 0;
@@ -14,10 +14,21 @@
   border: 1px solid grey;
 }
 
+.mapBlockUnwalkable:hover {
+  background-color: #686868;
+}
+
 .mapBlockPath {
   background-color: #3e98d1;
 }
 
 .youreHere {
   background-color: #d13e3e;
+}
+
+.itemHere {
+  background-color: yellow;
+  text-align: center;
+  padding-top: 1.25em;
+  font-weight: bold;
 }

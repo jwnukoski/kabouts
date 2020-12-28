@@ -103,6 +103,10 @@ class App extends React.Component {
 
   changePage(pageId) {
     this.setState({page: pageId});
+
+    if (pageId === 0) {
+      this.setYoureHere(0, 0);
+    }
   }
 
   getPage(pageId) {
