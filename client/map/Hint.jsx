@@ -1,56 +1,41 @@
 import React from 'react';
+import TemplateStyles from './css/template.literals.js';
 
-class Hint extends React.Component {
-  constructor(props) {
-    super(props);
-    this.getBlock = this.getBlock.bind(this);
-  }
+function Hint(props) {
+  const tempLitStyles = new TemplateStyles();
 
-  getBlock() {
-    if (this.props.data.visible) {
+  function getBlock() {
+    if (props.data.visible) {
       return <div>
-        {this.props.data.msg}
+        {props.data.msg}
       </div>
     } else {
       return <span></span>;
     }
   }
 
-  render() {
-    let hintStyle = {
-      display: 'none',
-      position: 'relative',
-      width: '0px',
-      height: '0px'
-    };
+  function getHintStyle() {
+    let hintStyle = tempLitStyles.hintStyleHidden;
 
-    if (this.props.data.visible) {
-      hintStyle = {
-        backgroundColor: 'rgba(175, 175, 175, 0.9)',
-        zIndex: '1000',
-        position: 'absolute',
-        width: '192px',
-        height: '64px',
-        overflow: 'hidden',
-        padding: '8px',
-        borderRadius: '8px',
-        textAlign: 'center',
-        display: 'block',
-        border: '1px solid black',
-        fontWeight: 'bold',
-        left: `${(this.props.data.x * 64)}px`,
-        top: `${(this.props.data.y * 64)}px`
+    if (props.data.visible) {
+      hintStyle = tempLitStyles.hintStyleVisible;
+
+      const coordinates = {
+        left: `${(props.data.x * tempLitStyles.tileSize)}px`,
+        top: `${(props.data.y * tempLitStyles.tileSize)}px`
       };
+
+      Object.assign(hintStyle, coordinates);
     }
 
-    return (
-      <div style={hintStyle}>
-        {
-          this.getBlock()
-        }
-      </div>
-    );
+    return hintStyle;
   }
+
+  return (
+    <div style={getHintStyle()}>
+      {getBlock()}
+    </div>
+  );
 }
 
 export default Hint;

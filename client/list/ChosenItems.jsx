@@ -1,35 +1,28 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-
 import ChosenItem from './ChosenItem.jsx';
 import styles from './css/list.module.css';
 
-// component did mount
-class ChosenItems extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
+function ChosenItems(props) {
+  function getHeader() {
     let header = (<span></span>);
-    if (this.props.chosenItems.length > 0) {
+    if (props.chosenItems.length > 0) {
       header = (<h2>Chosen Items</h2>);
     }
+    return header;
+  }
 
-    return (
+ return (
       <div className={styles.chosenItems}>
-        {header}
+        {getHeader()}
         <ul>
           {
-            this.props.chosenItems.map((item, index) => {
-              return <li key={index}><ChosenItem item={item} removeChosenItem={this.props.removeChosenItem}/></li>
+            props.chosenItems.map((item, index) => {
+              return <li key={index}><ChosenItem item={item} removeChosenItem={props.removeChosenItem}/></li>
             })
           }
         </ul>
       </div>
-
-    );
-  }
+  );
 }
 
 export default ChosenItems;

@@ -1,43 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-
 import conn from './connection.js';
 import styles from './css/app.module.css';
-
 import List from './list/List.jsx';
 import Map from './map/Map.jsx';
 
-// component did mount
-class App extends React.Component {
-  constructor(props) {
-    super(props);
+function App() {
+  const [youreHere, setYoureHere] = useState({x: 0, y: 0});
+  const [location, setLocation] = useState({id: 1, loc_name: '', size_x: 0, size_y: 0});
+  const [page, setPage] = useState(0);
+  const [chosenItems, setChosenItems] = useState([]);
+  const [items, setItems] = useState([]);
 
-    this.state = {
-      youreHere: {x: 0, y: 0},
-      location: {id: 1, loc_name: '', size_x: 0, size_y: 0},
-      page: 0,
-      chosenItems: [],
-      items: []
-    };
-
-    this.getLocation = this.getLocation.bind(this);
-    this.getLocation();
-    this.getItems = this.getItems.bind(this);
-    this.getItems();
-    this.addChosenItem = this.addChosenItem.bind(this);
-    this.getPage = this.getPage.bind(this);
-    this.changePage = this.changePage.bind(this);
-    this.removeChosenItem = this.removeChosenItem.bind(this);
-    this.setYoureHere = this.setYoureHere.bind(this);
-  }
-
-  setYoureHere(x, y) {
-    this.setState({youreHere: {x: x, y: y}});
-  }
-
-  getItems() {
-    axios.get(`${conn.path}/api/location/${this.state.location.id}/items`).then((res) => {
+  function getItems() {
+    axios.get(`${conn.path}/api/location/${location.id}/items`).then((res) => {
       // get id by coordinates
       if (res.data.length > 0) {
         return res.data;
@@ -45,13 +22,13 @@ class App extends React.Component {
         throw 'No data';
       }
     }).then(items => {
-      this.setState({items: items});
+      setItems(items);
     }).catch(err => {
       console.log(err);
     });
   }
 
-  addChosenItem(item_id) {
+  function addChosenItem (item_id) {
     const getDistance = function(xA, yA, xB, yB) {
       const xDiff = (xA - xB);
       const yDiff = (yA - yB);
@@ -59,63 +36,62 @@ class App extends React.Component {
     };
 
     let newChosenItems;
-    if (this.state.chosenItems.length <= 0) {
+    if (chosenItems.length <= 0) {
       newChosenItems = [];
     } else {
-      newChosenItems = [...this.state.chosenItems];
+      newChosenItems = [...chosenItems];
     }
 
-    for (let i = 0; i < this.state.items.length; i++) {
-      if (this.state.items[i].id === item_id) {
-        newChosenItems.push(this.state.items[i]);
+    for (let i = 0; i < items.length; i++) {
+      if (items[i].id === item_id) {
+        newChosenItems.push(items[i]);
         break;
       }
     }
 
     // sort to closest. we dont know the paths yet
     newChosenItems.sort((a, b) => {
-      const distanceA = getDistance(a.x, a.y, this.state.youreHere.x, this.state.youreHere.y);
-      const distanceB = getDistance(b.x, b.y, this.state.youreHere.x, this.state.youreHere.y);
+      const distanceA = getDistance(a.x, a.y, youreHere.x, youreHere.y);
+      const distanceB = getDistance(b.x, b.y, youreHere.x, youreHere.y);
       return distanceA - distanceB;
     });
 
-    this.setState({chosenItems: newChosenItems});
+    setChosenItems(newChosenItems);
   }
 
-  // removes item based on the id (database record id, not index) relevant to the item
-  removeChosenItem(item_id) {
-    const newChosenItems = [...this.state.chosenItems];
+  function removeChosenItem(item_id) {
+    const newChosenItems = [...chosenItems];
     for (let i = 0; i < newChosenItems.length; i++) {
       if (newChosenItems[i].id === item_id) {
         newChosenItems.splice(i, 1);
-        this.setState({chosenItems: newChosenItems});
+        setChosenItems(newChosenItems);
       }
     }
   }
 
-  getLocation() {
-    axios.get(`${conn.path}/api/location/${this.state.location.id}`).then((res) => {
-      this.setState({location: res.data[0]});
+  function getLocation() {
+    axios.get(`${conn.path}/api/location/${location.id}`).then((res) => {
+      setLocation(res.data[0]);
     }).catch(err => {
       console.log(err);
     });
   }
 
-  changePage(pageId) {
-    this.setState({page: pageId});
+  function changePage(pageId) {
+    setPage(pageId);
 
     if (pageId === 0) {
-      this.setYoureHere(0, 0);
+      setYoureHere({x: 0, y: 0}); // TODO: allow sql to store this info
     }
   }
 
-  getPage(pageId) {
+  function getPage(pageId) {
     switch (pageId) {
       case 0:
-        return (<List location={this.state.location} changePage={this.changePage} addChosenItem={this.addChosenItem} removeChosenItem={this.removeChosenItem} chosenItems={this.state.chosenItems} items={this.state.items}/>);
+        return (<List location={location} changePage={changePage} addChosenItem={addChosenItem} removeChosenItem={removeChosenItem} chosenItems={chosenItems} items={items}/>);
       break;
       case 1:
-        return (<Map location={this.state.location} changePage={this.changePage} chosenItems={this.state.chosenItems} setYoureHere={this.setYoureHere} youreHere={this.state.youreHere}/>);
+        return (<Map location={location} changePage={changePage} chosenItems={chosenItems} setYoureHere={setYoureHere} youreHere={youreHere}/>);
       break;
       default:
         return (<div></div>);
@@ -123,16 +99,19 @@ class App extends React.Component {
     }
   }
 
-  render() {
-    return (
-      <div>
-        <h1>{this.state.location.loc_name}</h1>
-        <div className={styles.app}>
-          {this.getPage(this.state.page)}
-        </div>
+  useEffect(() => {
+    getLocation();
+    getItems();
+  }, []);
+
+  return (
+    <div>
+      <h1>{location.loc_name}</h1>
+      <div className={styles.app}>
+        {getPage(page)}
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default App;

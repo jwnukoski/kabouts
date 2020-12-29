@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 44);
+/******/ 	return __webpack_require__(__webpack_require__.s = 43);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -92,31 +92,18 @@
 
 
 if (true) {
-  module.exports = __webpack_require__(22);
+  module.exports = __webpack_require__(21);
 } else {}
 
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
-
-var port = 3000;
-var host = '127.0.0.1';
-var path = "http://".concat(host, ":").concat(port);
-module.exports = {
-  port: port,
-  host: host,
-  path: path
-};
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var bind = __webpack_require__(14);
+var bind = __webpack_require__(13);
 
 /*global toString:true*/
 
@@ -468,7 +455,26 @@ module.exports = {
 
 
 /***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+var port = 3000;
+var host = '127.0.0.1';
+var path = "http://".concat(host, ":").concat(port);
+module.exports = {
+  port: port,
+  host: host,
+  path: path
+};
+
+/***/ }),
 /* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(25);
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -743,7 +749,7 @@ module.exports = function (list, options) {
 };
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -815,12 +821,6 @@ module.exports = function (cssWithMappingToString) {
 };
 
 /***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(26);
-
-/***/ }),
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -850,7 +850,7 @@ if (true) {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(23);
+  module.exports = __webpack_require__(22);
 } else {}
 
 
@@ -859,7 +859,7 @@ if (true) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
 // Imports
 
@@ -879,7 +879,7 @@ ___CSS_LOADER_EXPORT___.locals = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
 // Imports
 
@@ -1308,14 +1308,14 @@ ___CSS_LOADER_EXPORT___.locals = {
     Graph: Graph
   };
 });
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(43)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(42)(module)))
 
 /***/ }),
 /* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
 // Imports
 
@@ -1335,26 +1335,7 @@ ___CSS_LOADER_EXPORT___.locals = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-// Module
-___CSS_LOADER_EXPORT___.push([module.i, "\n._2oIQwenOT5Biv-TonKchXB {\n  display: inline-block;\n  width: 64px;\n  height: 64px;\n  overflow: hidden;\n  padding: 0;\n  margin: 0;\n}", ""]);
-// Exports
-___CSS_LOADER_EXPORT___.locals = {
-	"mapBlock": "_2oIQwenOT5Biv-TonKchXB"
-};
-/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-/* 12 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
 // Imports
 
@@ -1370,7 +1351,7 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1467,7 +1448,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 /***/ }),
-/* 14 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1485,13 +1466,13 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 15 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(2);
+var utils = __webpack_require__(1);
 
 function encode(val) {
   return encodeURIComponent(val).
@@ -1562,7 +1543,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 16 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1574,14 +1555,14 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-var utils = __webpack_require__(2);
-var normalizeHeaderName = __webpack_require__(32);
+var utils = __webpack_require__(1);
+var normalizeHeaderName = __webpack_require__(31);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -1597,10 +1578,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(18);
+    adapter = __webpack_require__(17);
   } else if (typeof process !== 'undefined' && Object.prototype.toString.call(process) === '[object process]') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(18);
+    adapter = __webpack_require__(17);
   }
   return adapter;
 }
@@ -1677,23 +1658,23 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(31)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(30)))
 
 /***/ }),
-/* 18 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(2);
-var settle = __webpack_require__(33);
-var cookies = __webpack_require__(35);
-var buildURL = __webpack_require__(15);
-var buildFullPath = __webpack_require__(36);
-var parseHeaders = __webpack_require__(39);
-var isURLSameOrigin = __webpack_require__(40);
-var createError = __webpack_require__(19);
+var utils = __webpack_require__(1);
+var settle = __webpack_require__(32);
+var cookies = __webpack_require__(34);
+var buildURL = __webpack_require__(14);
+var buildFullPath = __webpack_require__(35);
+var parseHeaders = __webpack_require__(38);
+var isURLSameOrigin = __webpack_require__(39);
+var createError = __webpack_require__(18);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -1866,13 +1847,13 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 19 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var enhanceError = __webpack_require__(34);
+var enhanceError = __webpack_require__(33);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -1891,13 +1872,13 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(2);
+var utils = __webpack_require__(1);
 
 /**
  * Config-specific merge-function which creates a new config-object
@@ -1985,7 +1966,7 @@ module.exports = function mergeConfig(config1, config2) {
 
 
 /***/ }),
-/* 21 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2011,7 +1992,7 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2024,7 +2005,7 @@ module.exports = Cancel;
  * LICENSE file in the root directory of this source tree.
  */
 
-var l=__webpack_require__(13),n="function"===typeof Symbol&&Symbol.for,p=n?Symbol.for("react.element"):60103,q=n?Symbol.for("react.portal"):60106,r=n?Symbol.for("react.fragment"):60107,t=n?Symbol.for("react.strict_mode"):60108,u=n?Symbol.for("react.profiler"):60114,v=n?Symbol.for("react.provider"):60109,w=n?Symbol.for("react.context"):60110,x=n?Symbol.for("react.forward_ref"):60112,y=n?Symbol.for("react.suspense"):60113,z=n?Symbol.for("react.memo"):60115,A=n?Symbol.for("react.lazy"):
+var l=__webpack_require__(12),n="function"===typeof Symbol&&Symbol.for,p=n?Symbol.for("react.element"):60103,q=n?Symbol.for("react.portal"):60106,r=n?Symbol.for("react.fragment"):60107,t=n?Symbol.for("react.strict_mode"):60108,u=n?Symbol.for("react.profiler"):60114,v=n?Symbol.for("react.provider"):60109,w=n?Symbol.for("react.context"):60110,x=n?Symbol.for("react.forward_ref"):60112,y=n?Symbol.for("react.suspense"):60113,z=n?Symbol.for("react.memo"):60115,A=n?Symbol.for("react.lazy"):
 60116,B="function"===typeof Symbol&&Symbol.iterator;function C(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}
 var D={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}},E={};function F(a,b,c){this.props=a;this.context=b;this.refs=E;this.updater=c||D}F.prototype.isReactComponent={};F.prototype.setState=function(a,b){if("object"!==typeof a&&"function"!==typeof a&&null!=a)throw Error(C(85));this.updater.enqueueSetState(this,a,b,"setState")};F.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};
 function G(){}G.prototype=F.prototype;function H(a,b,c){this.props=a;this.context=b;this.refs=E;this.updater=c||D}var I=H.prototype=new G;I.constructor=H;l(I,F.prototype);I.isPureReactComponent=!0;var J={current:null},K=Object.prototype.hasOwnProperty,L={key:!0,ref:!0,__self:!0,__source:!0};
@@ -2043,7 +2024,7 @@ exports.useLayoutEffect=function(a,b){return Z().useLayoutEffect(a,b)};exports.u
 
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2059,7 +2040,7 @@ exports.useLayoutEffect=function(a,b){return Z().useLayoutEffect(a,b)};exports.u
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(0),n=__webpack_require__(13),r=__webpack_require__(24);function u(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}if(!aa)throw Error(u(227));
+var aa=__webpack_require__(0),n=__webpack_require__(12),r=__webpack_require__(23);function u(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}if(!aa)throw Error(u(227));
 function ba(a,b,c,d,e,f,g,h,k){var l=Array.prototype.slice.call(arguments,3);try{b.apply(c,l)}catch(m){this.onError(m)}}var da=!1,ea=null,fa=!1,ha=null,ia={onError:function(a){da=!0;ea=a}};function ja(a,b,c,d,e,f,g,h,k){da=!1;ea=null;ba.apply(ia,arguments)}function ka(a,b,c,d,e,f,g,h,k){ja.apply(this,arguments);if(da){if(da){var l=ea;da=!1;ea=null}else throw Error(u(198));fa||(fa=!0,ha=l)}}var la=null,ma=null,na=null;
 function oa(a,b,c){var d=a.type||"unknown-event";a.currentTarget=na(c);ka(d,b,void 0,a);a.currentTarget=null}var pa=null,qa={};
 function ra(){if(pa)for(var a in qa){var b=qa[a],c=pa.indexOf(a);if(!(-1<c))throw Error(u(96,a));if(!sa[c]){if(!b.extractEvents)throw Error(u(97,a));sa[c]=b;c=b.eventTypes;for(var d in c){var e=void 0;var f=c[d],g=b,h=d;if(ta.hasOwnProperty(h))throw Error(u(99,h));ta[h]=f;var k=f.phasedRegistrationNames;if(k){for(e in k)k.hasOwnProperty(e)&&ua(k[e],g,h);e=!0}else f.registrationName?(ua(f.registrationName,g,h),e=!0):e=!1;if(!e)throw Error(u(98,d,a));}}}}
@@ -2342,19 +2323,19 @@ exports.unstable_renderSubtreeIntoContainer=function(a,b,c,d){if(!gk(c))throw Er
 
 
 /***/ }),
-/* 24 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 if (true) {
-  module.exports = __webpack_require__(25);
+  module.exports = __webpack_require__(24);
 } else {}
 
 
 /***/ }),
-/* 25 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2382,17 +2363,17 @@ exports.unstable_shouldYield=function(){var a=exports.unstable_now();V(a);var b=
 
 
 /***/ }),
-/* 26 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(2);
-var bind = __webpack_require__(14);
-var Axios = __webpack_require__(27);
-var mergeConfig = __webpack_require__(20);
-var defaults = __webpack_require__(17);
+var utils = __webpack_require__(1);
+var bind = __webpack_require__(13);
+var Axios = __webpack_require__(26);
+var mergeConfig = __webpack_require__(19);
+var defaults = __webpack_require__(16);
 
 /**
  * Create an instance of Axios
@@ -2425,15 +2406,15 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(21);
-axios.CancelToken = __webpack_require__(41);
-axios.isCancel = __webpack_require__(16);
+axios.Cancel = __webpack_require__(20);
+axios.CancelToken = __webpack_require__(40);
+axios.isCancel = __webpack_require__(15);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(42);
+axios.spread = __webpack_require__(41);
 
 module.exports = axios;
 
@@ -2442,17 +2423,17 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 27 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(2);
-var buildURL = __webpack_require__(15);
-var InterceptorManager = __webpack_require__(28);
-var dispatchRequest = __webpack_require__(29);
-var mergeConfig = __webpack_require__(20);
+var utils = __webpack_require__(1);
+var buildURL = __webpack_require__(14);
+var InterceptorManager = __webpack_require__(27);
+var dispatchRequest = __webpack_require__(28);
+var mergeConfig = __webpack_require__(19);
 
 /**
  * Create a new instance of Axios
@@ -2544,13 +2525,13 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 28 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(2);
+var utils = __webpack_require__(1);
 
 function InterceptorManager() {
   this.handlers = [];
@@ -2603,16 +2584,16 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 29 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(2);
-var transformData = __webpack_require__(30);
-var isCancel = __webpack_require__(16);
-var defaults = __webpack_require__(17);
+var utils = __webpack_require__(1);
+var transformData = __webpack_require__(29);
+var isCancel = __webpack_require__(15);
+var defaults = __webpack_require__(16);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -2689,13 +2670,13 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 30 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(2);
+var utils = __webpack_require__(1);
 
 /**
  * Transform the data for a request or a response
@@ -2716,7 +2697,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 31 */
+/* 30 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -2906,13 +2887,13 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 32 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(2);
+var utils = __webpack_require__(1);
 
 module.exports = function normalizeHeaderName(headers, normalizedName) {
   utils.forEach(headers, function processHeader(value, name) {
@@ -2925,13 +2906,13 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 33 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createError = __webpack_require__(19);
+var createError = __webpack_require__(18);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -2957,7 +2938,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 34 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3006,13 +2987,13 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 35 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(2);
+var utils = __webpack_require__(1);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -3066,14 +3047,14 @@ module.exports = (
 
 
 /***/ }),
-/* 36 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var isAbsoluteURL = __webpack_require__(37);
-var combineURLs = __webpack_require__(38);
+var isAbsoluteURL = __webpack_require__(36);
+var combineURLs = __webpack_require__(37);
 
 /**
  * Creates a new URL by combining the baseURL with the requestedURL,
@@ -3093,7 +3074,7 @@ module.exports = function buildFullPath(baseURL, requestedURL) {
 
 
 /***/ }),
-/* 37 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3114,7 +3095,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 38 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3135,13 +3116,13 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 39 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(2);
+var utils = __webpack_require__(1);
 
 // Headers whose duplicates are ignored by node
 // c.f. https://nodejs.org/api/http.html#http_message_headers
@@ -3195,13 +3176,13 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 40 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(2);
+var utils = __webpack_require__(1);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -3270,13 +3251,13 @@ module.exports = (
 
 
 /***/ }),
-/* 41 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Cancel = __webpack_require__(21);
+var Cancel = __webpack_require__(20);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -3334,7 +3315,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 42 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3368,7 +3349,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 43 */
+/* 42 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -3396,7 +3377,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 44 */
+/* 43 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3412,15 +3393,15 @@ var react_dom = __webpack_require__(6);
 var react_dom_default = /*#__PURE__*/__webpack_require__.n(react_dom);
 
 // EXTERNAL MODULE: ./node_modules/axios/index.js
-var axios = __webpack_require__(5);
+var axios = __webpack_require__(3);
 var axios_default = /*#__PURE__*/__webpack_require__.n(axios);
 
 // EXTERNAL MODULE: ./client/connection.js
-var connection = __webpack_require__(1);
+var connection = __webpack_require__(2);
 var connection_default = /*#__PURE__*/__webpack_require__.n(connection);
 
 // EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
-var injectStylesIntoStyleTag = __webpack_require__(3);
+var injectStylesIntoStyleTag = __webpack_require__(4);
 var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
 
 // EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js!./client/css/app.module.css
@@ -3458,228 +3439,79 @@ var list_module_update = injectStylesIntoStyleTag_default()(list_module["a" /* d
 
 /* harmony default export */ var css_list_module = (list_module["a" /* default */].locals || {});
 // CONCATENATED MODULE: ./client/list/AvailableItemsList.jsx
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
 
- // component did mount
+function AvailableItemsList(props) {
+  var handleSubmit = function handleSubmit() {
+    var item_id = Number(document.getElementById('items').value);
+    props.addChosenItem(item_id);
+  };
 
-var AvailableItemsList_AvailableItemsList = /*#__PURE__*/function (_React$Component) {
-  _inherits(AvailableItemsList, _React$Component);
+  return /*#__PURE__*/react_default.a.createElement("div", {
+    className: css_list_module.availableItemsList
+  }, /*#__PURE__*/react_default.a.createElement("h2", null, "Available Items"), /*#__PURE__*/react_default.a.createElement("button", {
+    onClick: handleSubmit,
+    className: css_list_module.addBtn
+  }, "Add"), /*#__PURE__*/react_default.a.createElement("select", {
+    id: "items"
+  }, props.items.map(function (item, index) {
+    return /*#__PURE__*/react_default.a.createElement("option", {
+      value: item.id,
+      key: index
+    }, item.info);
+  })));
+}
 
-  var _super = _createSuper(AvailableItemsList);
-
-  function AvailableItemsList(props) {
-    var _this;
-
-    _classCallCheck(this, AvailableItemsList);
-
-    _this = _super.call(this, props);
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
-    return _this;
-  }
-
-  _createClass(AvailableItemsList, [{
-    key: "handleSubmit",
-    value: function handleSubmit() {
-      var item_id = Number(document.getElementById('items').value);
-      this.props.addChosenItem(item_id);
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/react_default.a.createElement("div", {
-        className: css_list_module.availableItemsList
-      }, /*#__PURE__*/react_default.a.createElement("h2", null, "Available Items"), /*#__PURE__*/react_default.a.createElement("button", {
-        onClick: this.handleSubmit,
-        className: css_list_module.addBtn
-      }, "Add"), /*#__PURE__*/react_default.a.createElement("select", {
-        id: "items"
-      }, this.props.items.map(function (item, index) {
-        return /*#__PURE__*/react_default.a.createElement("option", {
-          value: item.id,
-          key: index
-        }, item.info);
-      })));
-    }
-  }]);
-
-  return AvailableItemsList;
-}(react_default.a.Component);
-
-/* harmony default export */ var list_AvailableItemsList = (AvailableItemsList_AvailableItemsList);
+/* harmony default export */ var list_AvailableItemsList = (AvailableItemsList);
 // CONCATENATED MODULE: ./client/list/ChosenItem.jsx
-function ChosenItem_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { ChosenItem_typeof = function _typeof(obj) { return typeof obj; }; } else { ChosenItem_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return ChosenItem_typeof(obj); }
-
-function ChosenItem_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function ChosenItem_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function ChosenItem_createClass(Constructor, protoProps, staticProps) { if (protoProps) ChosenItem_defineProperties(Constructor.prototype, protoProps); if (staticProps) ChosenItem_defineProperties(Constructor, staticProps); return Constructor; }
-
-function ChosenItem_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) ChosenItem_setPrototypeOf(subClass, superClass); }
-
-function ChosenItem_setPrototypeOf(o, p) { ChosenItem_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return ChosenItem_setPrototypeOf(o, p); }
-
-function ChosenItem_createSuper(Derived) { var hasNativeReflectConstruct = ChosenItem_isNativeReflectConstruct(); return function _createSuperInternal() { var Super = ChosenItem_getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = ChosenItem_getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return ChosenItem_possibleConstructorReturn(this, result); }; }
-
-function ChosenItem_possibleConstructorReturn(self, call) { if (call && (ChosenItem_typeof(call) === "object" || typeof call === "function")) { return call; } return ChosenItem_assertThisInitialized(self); }
-
-function ChosenItem_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function ChosenItem_isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function ChosenItem_getPrototypeOf(o) { ChosenItem_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return ChosenItem_getPrototypeOf(o); }
 
 
 
- // component did mount
-
-var ChosenItem_ChosenItem = /*#__PURE__*/function (_React$Component) {
-  ChosenItem_inherits(ChosenItem, _React$Component);
-
-  var _super = ChosenItem_createSuper(ChosenItem);
-
-  function ChosenItem(props) {
-    var _this;
-
-    ChosenItem_classCallCheck(this, ChosenItem);
-
-    _this = _super.call(this, props);
-    _this.handleDeleteClick = _this.handleDeleteClick.bind(ChosenItem_assertThisInitialized(_this));
-    return _this;
+function ChosenItem(props) {
+  function handleDeleteClick(e) {
+    this.props.removeChosenItem(this.props.item.id);
   }
 
-  ChosenItem_createClass(ChosenItem, [{
-    key: "handleDeleteClick",
-    value: function handleDeleteClick(e) {
-      this.props.removeChosenItem(this.props.item.id);
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/react_default.a.createElement("div", {
-        className: css_list_module.chosenItems
-      }, /*#__PURE__*/react_default.a.createElement("button", {
-        className: css_list_module.deleteBtn,
-        onClick: this.handleDeleteClick
-      }, "X"), this.props.item.info);
-    }
-  }]);
+  return /*#__PURE__*/react_default.a.createElement("div", {
+    className: css_list_module.chosenItems
+  }, /*#__PURE__*/react_default.a.createElement("button", {
+    className: css_list_module.deleteBtn,
+    onClick: handleDeleteClick
+  }, "X"), props.item.info);
+}
 
-  return ChosenItem;
-}(react_default.a.Component);
-
-/* harmony default export */ var list_ChosenItem = (ChosenItem_ChosenItem);
+/* harmony default export */ var list_ChosenItem = (ChosenItem);
 // CONCATENATED MODULE: ./client/list/ChosenItems.jsx
-function ChosenItems_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { ChosenItems_typeof = function _typeof(obj) { return typeof obj; }; } else { ChosenItems_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return ChosenItems_typeof(obj); }
-
-function ChosenItems_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function ChosenItems_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function ChosenItems_createClass(Constructor, protoProps, staticProps) { if (protoProps) ChosenItems_defineProperties(Constructor.prototype, protoProps); if (staticProps) ChosenItems_defineProperties(Constructor, staticProps); return Constructor; }
-
-function ChosenItems_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) ChosenItems_setPrototypeOf(subClass, superClass); }
-
-function ChosenItems_setPrototypeOf(o, p) { ChosenItems_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return ChosenItems_setPrototypeOf(o, p); }
-
-function ChosenItems_createSuper(Derived) { var hasNativeReflectConstruct = ChosenItems_isNativeReflectConstruct(); return function _createSuperInternal() { var Super = ChosenItems_getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = ChosenItems_getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return ChosenItems_possibleConstructorReturn(this, result); }; }
-
-function ChosenItems_possibleConstructorReturn(self, call) { if (call && (ChosenItems_typeof(call) === "object" || typeof call === "function")) { return call; } return ChosenItems_assertThisInitialized(self); }
-
-function ChosenItems_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function ChosenItems_isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function ChosenItems_getPrototypeOf(o) { ChosenItems_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return ChosenItems_getPrototypeOf(o); }
 
 
 
 
- // component did mount
+function ChosenItems(props) {
+  function getHeader() {
+    var header = /*#__PURE__*/react_default.a.createElement("span", null);
 
-var ChosenItems_ChosenItems = /*#__PURE__*/function (_React$Component) {
-  ChosenItems_inherits(ChosenItems, _React$Component);
+    if (props.chosenItems.length > 0) {
+      header = /*#__PURE__*/react_default.a.createElement("h2", null, "Chosen Items");
+    }
 
-  var _super = ChosenItems_createSuper(ChosenItems);
-
-  function ChosenItems(props) {
-    ChosenItems_classCallCheck(this, ChosenItems);
-
-    return _super.call(this, props);
+    return header;
   }
 
-  ChosenItems_createClass(ChosenItems, [{
-    key: "render",
-    value: function render() {
-      var _this = this;
+  return /*#__PURE__*/react_default.a.createElement("div", {
+    className: css_list_module.chosenItems
+  }, getHeader(), /*#__PURE__*/react_default.a.createElement("ul", null, props.chosenItems.map(function (item, index) {
+    return /*#__PURE__*/react_default.a.createElement("li", {
+      key: index
+    }, /*#__PURE__*/react_default.a.createElement(list_ChosenItem, {
+      item: item,
+      removeChosenItem: props.removeChosenItem
+    }));
+  })));
+}
 
-      var header = /*#__PURE__*/react_default.a.createElement("span", null);
-
-      if (this.props.chosenItems.length > 0) {
-        header = /*#__PURE__*/react_default.a.createElement("h2", null, "Chosen Items");
-      }
-
-      return /*#__PURE__*/react_default.a.createElement("div", {
-        className: css_list_module.chosenItems
-      }, header, /*#__PURE__*/react_default.a.createElement("ul", null, this.props.chosenItems.map(function (item, index) {
-        return /*#__PURE__*/react_default.a.createElement("li", {
-          key: index
-        }, /*#__PURE__*/react_default.a.createElement(list_ChosenItem, {
-          item: item,
-          removeChosenItem: _this.props.removeChosenItem
-        }));
-      })));
-    }
-  }]);
-
-  return ChosenItems;
-}(react_default.a.Component);
-
-/* harmony default export */ var list_ChosenItems = (ChosenItems_ChosenItems);
+/* harmony default export */ var list_ChosenItems = (ChosenItems);
 // CONCATENATED MODULE: ./client/list/List.jsx
-function List_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { List_typeof = function _typeof(obj) { return typeof obj; }; } else { List_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return List_typeof(obj); }
-
-function List_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function List_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function List_createClass(Constructor, protoProps, staticProps) { if (protoProps) List_defineProperties(Constructor.prototype, protoProps); if (staticProps) List_defineProperties(Constructor, staticProps); return Constructor; }
-
-function List_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) List_setPrototypeOf(subClass, superClass); }
-
-function List_setPrototypeOf(o, p) { List_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return List_setPrototypeOf(o, p); }
-
-function List_createSuper(Derived) { var hasNativeReflectConstruct = List_isNativeReflectConstruct(); return function _createSuperInternal() { var Super = List_getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = List_getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return List_possibleConstructorReturn(this, result); }; }
-
-function List_possibleConstructorReturn(self, call) { if (call && (List_typeof(call) === "object" || typeof call === "function")) { return call; } return List_assertThisInitialized(self); }
-
-function List_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function List_isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function List_getPrototypeOf(o) { List_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return List_getPrototypeOf(o); }
 
 
 
@@ -3687,60 +3519,34 @@ function List_getPrototypeOf(o) { List_getPrototypeOf = Object.setPrototypeOf ? 
 
 
 
- // component did mount
-
-var List_List = /*#__PURE__*/function (_React$Component) {
-  List_inherits(List, _React$Component);
-
-  var _super = List_createSuper(List);
-
-  function List(props) {
-    var _this;
-
-    List_classCallCheck(this, List);
-
-    _this = _super.call(this, props);
-    _this.getDoneBtn = _this.getDoneBtn.bind(List_assertThisInitialized(_this));
-    _this.handleDoneClick = _this.handleDoneClick.bind(List_assertThisInitialized(_this));
-    return _this;
+function List(props) {
+  function handleDoneClick() {
+    props.changePage(1);
   }
 
-  List_createClass(List, [{
-    key: "handleDoneClick",
-    value: function handleDoneClick() {
-      this.props.changePage(1);
+  function getDoneBtn() {
+    if (props.chosenItems.length > 0) {
+      return /*#__PURE__*/react_default.a.createElement("button", {
+        className: css_list_module.toMapBtn,
+        onClick: handleDoneClick
+      }, "View Map");
+    } else {
+      return /*#__PURE__*/react_default.a.createElement("div", null);
     }
-  }, {
-    key: "getDoneBtn",
-    value: function getDoneBtn() {
-      if (this.props.chosenItems.length > 0) {
-        return /*#__PURE__*/react_default.a.createElement("button", {
-          className: css_list_module.toMapBtn,
-          onClick: this.handleDoneClick
-        }, "View Map");
-      } else {
-        return /*#__PURE__*/react_default.a.createElement("div", null);
-      }
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/react_default.a.createElement("div", {
-        className: css_list_module.list
-      }, /*#__PURE__*/react_default.a.createElement(list_AvailableItemsList, {
-        items: this.props.items,
-        addChosenItem: this.props.addChosenItem
-      }), this.getDoneBtn(), /*#__PURE__*/react_default.a.createElement(list_ChosenItems, {
-        chosenItems: this.props.chosenItems,
-        removeChosenItem: this.props.removeChosenItem
-      }));
-    }
-  }]);
+  }
 
-  return List;
-}(react_default.a.Component);
+  return /*#__PURE__*/react_default.a.createElement("div", {
+    className: css_list_module.list
+  }, /*#__PURE__*/react_default.a.createElement(list_AvailableItemsList, {
+    items: props.items,
+    addChosenItem: props.addChosenItem
+  }), getDoneBtn(), /*#__PURE__*/react_default.a.createElement(list_ChosenItems, {
+    chosenItems: props.chosenItems,
+    removeChosenItem: props.removeChosenItem
+  }));
+}
 
-/* harmony default export */ var list_List = (List_List);
+/* harmony default export */ var list_List = (List);
 // EXTERNAL MODULE: ./client/map/astar.js
 var astar = __webpack_require__(9);
 
@@ -3761,37 +3567,29 @@ var map_module_update = injectStylesIntoStyleTag_default()(map_module["a" /* def
 
 
 /* harmony default export */ var css_map_module = (map_module["a" /* default */].locals || {});
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js!./client/map/css/block.module.css
-var block_module = __webpack_require__(11);
-
-// CONCATENATED MODULE: ./client/map/css/block.module.css
-
-            
-
-var block_module_options = {};
-
-block_module_options.insert = "head";
-block_module_options.singleton = false;
-
-var block_module_update = injectStylesIntoStyleTag_default()(block_module["a" /* default */], block_module_options);
-
-
-
-/* harmony default export */ var css_block_module = (block_module["a" /* default */].locals || {});
 // CONCATENATED MODULE: ./client/map/css/template.literals.js
-function template_literals_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 
 
 var template_literals_TemplateStyles = function TemplateStyles() {
-  template_literals_classCallCheck(this, TemplateStyles);
+  _classCallCheck(this, TemplateStyles);
 
   var tileSize = 64;
+  this.tileSize = tileSize;
   var tiles = "url(".concat(connection_default.a.path, "/tiles.png)");
   var yourHere = "url(".concat(connection_default.a.path, "/character.gif)");
   var globalTileStyle = {
     width: "".concat(tileSize, "px"),
     height: "".concat(tileSize, "px")
+  };
+  this.mapBlock = {
+    display: 'inline-block',
+    width: "".concat(tileSize, "px"),
+    height: "".concat(tileSize, "px"),
+    overflow: 'hidden',
+    padding: 0,
+    margin: 0
   };
   this.itemHereStyle = {
     background: "".concat(tiles, " 0 -").concat(tileSize * 2, "px")
@@ -3813,215 +3611,164 @@ var template_literals_TemplateStyles = function TemplateStyles() {
     background: "".concat(tiles, " 0 0")
   };
   Object.assign(this.emptySpaceStyle, globalTileStyle);
+  this.hintStyleHidden = {
+    display: 'none',
+    position: 'relative',
+    width: '0px',
+    height: '0px'
+  };
+  this.hintStyleVisible = {
+    backgroundColor: 'rgba(175, 175, 175, 0.9)',
+    zIndex: '1000',
+    position: 'absolute',
+    width: "".concat(tileSize * 3, "px"),
+    height: "".concat(tileSize, "px"),
+    overflow: 'hidden',
+    padding: '8px',
+    borderRadius: '8px',
+    textAlign: 'center',
+    display: 'block',
+    border: '1px solid black',
+    fontWeight: 'bold'
+  };
 };
 
 /* harmony default export */ var template_literals = (template_literals_TemplateStyles);
 // CONCATENATED MODULE: ./client/map/Block.jsx
-function Block_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Block_typeof = function _typeof(obj) { return typeof obj; }; } else { Block_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Block_typeof(obj); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
-function Block_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function Block_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
-function Block_createClass(Constructor, protoProps, staticProps) { if (protoProps) Block_defineProperties(Constructor.prototype, protoProps); if (staticProps) Block_defineProperties(Constructor, staticProps); return Constructor; }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function Block_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) Block_setPrototypeOf(subClass, superClass); }
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
-function Block_setPrototypeOf(o, p) { Block_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return Block_setPrototypeOf(o, p); }
-
-function Block_createSuper(Derived) { var hasNativeReflectConstruct = Block_isNativeReflectConstruct(); return function _createSuperInternal() { var Super = Block_getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = Block_getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Block_possibleConstructorReturn(this, result); }; }
-
-function Block_possibleConstructorReturn(self, call) { if (call && (Block_typeof(call) === "object" || typeof call === "function")) { return call; } return Block_assertThisInitialized(self); }
-
-function Block_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function Block_isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function Block_getPrototypeOf(o) { Block_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return Block_getPrototypeOf(o); }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
 
 
 
+function Block(props) {
+  var _useState = Object(react["useState"])(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      id = _useState2[0],
+      setId = _useState2[1];
 
-var Block_Block = /*#__PURE__*/function (_React$Component) {
-  Block_inherits(Block, _React$Component);
+  var _useState3 = Object(react["useState"])([]),
+      _useState4 = _slicedToArray(_useState3, 2),
+      items = _useState4[0],
+      setItems = _useState4[1];
 
-  var _super = Block_createSuper(Block);
+  var tempLitStyles = new template_literals();
 
-  function Block(props) {
-    var _this;
+  function getBlockData() {
+    axios_default.a.get("".concat(connection_default.a.path, "/api/blocks/").concat(props.location.id, "/").concat(props.x, "/").concat(props.y)).then(function (res) {
+      // get id by coordinates
+      if (res.data.length > 0) {
+        return res.data[0].id;
+      } else {
+        throw 'No data';
+      }
+    }).then(function (blockId) {
+      setId(blockId); // get items by id
 
-    Block_classCallCheck(this, Block);
-
-    _this = _super.call(this, props);
-    _this.tempLitStyles = new template_literals();
-    _this.state = {
-      x: _this.props.x,
-      y: _this.props.y,
-      id: null,
-      items: []
-    };
-    _this.getId = _this.getId.bind(Block_assertThisInitialized(_this));
-    _this.getItems = _this.getItems.bind(Block_assertThisInitialized(_this));
-    _this.getBlockData = _this.getBlockData.bind(Block_assertThisInitialized(_this));
-    _this.getVisualBlock = _this.getVisualBlock.bind(Block_assertThisInitialized(_this));
-    _this.mouseOut = _this.mouseOut.bind(Block_assertThisInitialized(_this));
-    _this.mouseOver = _this.mouseOver.bind(Block_assertThisInitialized(_this));
-    return _this;
+      return axios_default.a.get("".concat(connection_default.a.path, "/api/blocks/").concat(blockId, "/items"));
+    }).then(function (items) {
+      if (items.data.length > 0) {
+        setItems(items.data);
+      } else {
+        throw 'No items';
+      }
+    })["catch"](function (err) {});
   }
 
-  Block_createClass(Block, [{
-    key: "getId",
-    value: function getId() {
-      return this.state.id;
-    }
-  }, {
-    key: "getItems",
-    value: function getItems() {
-      return this.state.items;
-    }
-  }, {
-    key: "getIsWalkable",
-    value: function getIsWalkable() {
-      if (this.state.id === null) {
-        return true;
-      } else {
-        return false;
+  function getVisualBlock() {
+    // check if this should be highlighted
+    var isPath = false;
+
+    for (var i = 0; i < props.path.length; i++) {
+      if (props.path[i].x === props.x && props.path[i].y === props.y) {
+        isPath = true;
+        break;
       }
     }
-  }, {
-    key: "getCoordinates",
-    value: function getCoordinates() {
-      return {
-        x: this.state.x,
-        y: this.state.y
-      };
-    }
-  }, {
-    key: "getBlockData",
-    value: function getBlockData() {
-      var _this2 = this;
 
-      axios_default.a.get("".concat(connection_default.a.path, "/api/blocks/").concat(this.props.location.id, "/").concat(this.state.x, "/").concat(this.state.y)).then(function (res) {
-        // get id by coordinates
-        if (res.data.length > 0) {
-          return res.data[0].id;
-        } else {
-          throw 'No data';
-        }
-      }).then(function (blockId) {
-        _this2.setState({
-          id: blockId
-        }); // get items by id
+    if (id !== null) {
+      ; // where the item is
 
+      if (props.path.length > 0) {
+        var itemBlock = props.path[props.path.length - 1];
 
-        return axios_default.a.get("".concat(connection_default.a.path, "/api/blocks/").concat(blockId, "/items"));
-      }).then(function (items) {
-        if (items.data.length > 0) {
-          _this2.setState({
-            items: items.data
-          });
-        } else {
-          throw 'No items';
-        }
-      })["catch"](function (err) {});
-    }
-  }, {
-    key: "getVisualBlock",
-    value: function getVisualBlock() {
-      // check if this should be highlighted
-      var isPath = false;
-
-      for (var i = 0; i < this.props.path.length; i++) {
-        if (this.props.path[i].x === this.state.x && this.props.path[i].y === this.state.y) {
-          isPath = true;
-          break;
-        }
-      }
-
-      if (this.state.id !== null) {
-        ; // where the item is
-
-        if (this.props.path.length > 0) {
-          var itemBlock = this.props.path[this.props.path.length - 1];
-
-          if (itemBlock.x === this.state.x && itemBlock.y === this.state.y) {
-            return /*#__PURE__*/react_default.a.createElement("div", {
-              style: this.tempLitStyles.itemHereStyle,
-              onMouseEnter: this.mouseOver,
-              onMouseLeave: this.mouseOut
-            });
-          }
-        } // any other unwalkable area
-
-
-        return /*#__PURE__*/react_default.a.createElement("div", {
-          style: this.tempLitStyles.unwalkableStyle,
-          onMouseEnter: this.mouseOver,
-          onMouseLeave: this.mouseOut
-        });
-      } else {
-        if (this.props.x === this.props.youreHere.x && this.props.y === this.props.youreHere.y) {
-          // youre here
+        if (itemBlock.x === props.x && itemBlock.y === props.y) {
           return /*#__PURE__*/react_default.a.createElement("div", {
-            style: this.tempLitStyles.youreHereStyle
-          });
-        } else if (isPath) {
-          // walkable path
-          return /*#__PURE__*/react_default.a.createElement("div", {
-            style: this.tempLitStyles.walkablePathStyle
-          });
-        } else {
-          // regular empty space
-          return /*#__PURE__*/react_default.a.createElement("div", {
-            style: this.tempLitStyles.emptySpaceStyle
+            style: tempLitStyles.itemHereStyle,
+            onMouseEnter: mouseOver,
+            onMouseLeave: mouseOut
           });
         }
-      }
-    }
-  }, {
-    key: "mouseOver",
-    value: function mouseOver() {
-      if (this.state.items.length <= 0) {
-        return;
-      } // build msg
+      } // any other unwalkable area
 
-
-      var maxItems = 5;
-      var msg = '';
-
-      for (var i = 0; i < this.state.items.length && i < maxItems; i++) {
-        msg += "".concat(this.state.items[i].info, ". ");
-      }
-
-      this.props.setHint(true, this.state.x, this.state.y, msg);
-    }
-  }, {
-    key: "mouseOut",
-    value: function mouseOut() {
-      this.props.setHint(false, 0, 0, '');
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      if (this.state.id === null) {
-        this.getBlockData();
-      }
 
       return /*#__PURE__*/react_default.a.createElement("div", {
-        className: css_block_module.mapBlock
-      }, this.getVisualBlock());
+        style: tempLitStyles.unwalkableStyle,
+        onMouseEnter: mouseOver,
+        onMouseLeave: mouseOut
+      });
+    } else {
+      if (props.x === props.youreHere.x && props.y === props.youreHere.y) {
+        // youre here
+        return /*#__PURE__*/react_default.a.createElement("div", {
+          style: tempLitStyles.youreHereStyle
+        });
+      } else if (isPath) {
+        // walkable path
+        return /*#__PURE__*/react_default.a.createElement("div", {
+          style: tempLitStyles.walkablePathStyle
+        });
+      } else {
+        // regular empty space
+        return /*#__PURE__*/react_default.a.createElement("div", {
+          style: tempLitStyles.emptySpaceStyle
+        });
+      }
     }
-  }]);
+  }
 
-  return Block;
-}(react_default.a.Component);
+  function mouseOver() {
+    if (items.length <= 0) {
+      return;
+    } // build msg
 
-/* harmony default export */ var map_Block = (Block_Block);
+
+    var maxItems = 5;
+    var msg = '';
+
+    for (var i = 0; i < items.length && i < maxItems; i++) {
+      msg += "".concat(items[i].info, ". ");
+    }
+
+    props.setHint(true, props.x, props.y, msg);
+  }
+
+  function mouseOut() {
+    props.setHint(false, 0, 0, '');
+  }
+
+  Object(react["useEffect"])(function () {
+    getBlockData();
+  }, []);
+  return /*#__PURE__*/react_default.a.createElement("div", {
+    style: tempLitStyles.mapBlock
+  }, getVisualBlock());
+}
+
+/* harmony default export */ var map_Block = (Block);
 // EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js!./client/map/css/pathlist.module.css
-var pathlist_module = __webpack_require__(12);
+var pathlist_module = __webpack_require__(11);
 
 // CONCATENATED MODULE: ./client/map/css/pathlist.module.css
 
@@ -4038,35 +3785,35 @@ var pathlist_module_update = injectStylesIntoStyleTag_default()(pathlist_module[
 
 /* harmony default export */ var css_pathlist_module = (pathlist_module["a" /* default */].locals || {});
 // CONCATENATED MODULE: ./client/map/PathList.jsx
-function PathList_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { PathList_typeof = function _typeof(obj) { return typeof obj; }; } else { PathList_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return PathList_typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function PathList_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function PathList_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function PathList_createClass(Constructor, protoProps, staticProps) { if (protoProps) PathList_defineProperties(Constructor.prototype, protoProps); if (staticProps) PathList_defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-function PathList_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) PathList_setPrototypeOf(subClass, superClass); }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
-function PathList_setPrototypeOf(o, p) { PathList_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return PathList_setPrototypeOf(o, p); }
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function PathList_createSuper(Derived) { var hasNativeReflectConstruct = PathList_isNativeReflectConstruct(); return function _createSuperInternal() { var Super = PathList_getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = PathList_getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return PathList_possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
-function PathList_possibleConstructorReturn(self, call) { if (call && (PathList_typeof(call) === "object" || typeof call === "function")) { return call; } return PathList_assertThisInitialized(self); }
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function PathList_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-function PathList_isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
-function PathList_getPrototypeOf(o) { PathList_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return PathList_getPrototypeOf(o); }
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
 
 
 var PathList_PathList = /*#__PURE__*/function (_React$Component) {
-  PathList_inherits(PathList, _React$Component);
+  _inherits(PathList, _React$Component);
 
-  var _super = PathList_createSuper(PathList);
+  var _super = _createSuper(PathList);
 
   function PathList(props) {
     var _this;
@@ -4074,12 +3821,12 @@ var PathList_PathList = /*#__PURE__*/function (_React$Component) {
     PathList_classCallCheck(this, PathList);
 
     _this = _super.call(this, props);
-    _this.handleNextBtn = _this.handleNextBtn.bind(PathList_assertThisInitialized(_this));
-    _this.handleBackBtn = _this.handleBackBtn.bind(PathList_assertThisInitialized(_this));
+    _this.handleNextBtn = _this.handleNextBtn.bind(_assertThisInitialized(_this));
+    _this.handleBackBtn = _this.handleBackBtn.bind(_assertThisInitialized(_this));
     return _this;
   }
 
-  PathList_createClass(PathList, [{
+  _createClass(PathList, [{
     key: "handleNextBtn",
     value: function handleNextBtn() {
       this.props.nextItem();
@@ -4113,364 +3860,269 @@ var PathList_PathList = /*#__PURE__*/function (_React$Component) {
 
 /* harmony default export */ var map_PathList = (PathList_PathList);
 // CONCATENATED MODULE: ./client/map/Hint.jsx
-function Hint_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Hint_typeof = function _typeof(obj) { return typeof obj; }; } else { Hint_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Hint_typeof(obj); }
-
-function Hint_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function Hint_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function Hint_createClass(Constructor, protoProps, staticProps) { if (protoProps) Hint_defineProperties(Constructor.prototype, protoProps); if (staticProps) Hint_defineProperties(Constructor, staticProps); return Constructor; }
-
-function Hint_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) Hint_setPrototypeOf(subClass, superClass); }
-
-function Hint_setPrototypeOf(o, p) { Hint_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return Hint_setPrototypeOf(o, p); }
-
-function Hint_createSuper(Derived) { var hasNativeReflectConstruct = Hint_isNativeReflectConstruct(); return function _createSuperInternal() { var Super = Hint_getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = Hint_getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Hint_possibleConstructorReturn(this, result); }; }
-
-function Hint_possibleConstructorReturn(self, call) { if (call && (Hint_typeof(call) === "object" || typeof call === "function")) { return call; } return Hint_assertThisInitialized(self); }
-
-function Hint_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function Hint_isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function Hint_getPrototypeOf(o) { Hint_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return Hint_getPrototypeOf(o); }
 
 
 
-var Hint_Hint = /*#__PURE__*/function (_React$Component) {
-  Hint_inherits(Hint, _React$Component);
+function Hint(props) {
+  var tempLitStyles = new template_literals();
 
-  var _super = Hint_createSuper(Hint);
-
-  function Hint(props) {
-    var _this;
-
-    Hint_classCallCheck(this, Hint);
-
-    _this = _super.call(this, props);
-    _this.getBlock = _this.getBlock.bind(Hint_assertThisInitialized(_this));
-    return _this;
+  function getBlock() {
+    if (props.data.visible) {
+      return /*#__PURE__*/react_default.a.createElement("div", null, props.data.msg);
+    } else {
+      return /*#__PURE__*/react_default.a.createElement("span", null);
+    }
   }
 
-  Hint_createClass(Hint, [{
-    key: "getBlock",
-    value: function getBlock() {
-      if (this.props.data.visible) {
-        return /*#__PURE__*/react_default.a.createElement("div", null, this.props.data.msg);
-      } else {
-        return /*#__PURE__*/react_default.a.createElement("span", null);
-      }
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var hintStyle = {
-        display: 'none',
-        position: 'relative',
-        width: '0px',
-        height: '0px'
+  function getHintStyle() {
+    var hintStyle = tempLitStyles.hintStyleHidden;
+
+    if (props.data.visible) {
+      hintStyle = tempLitStyles.hintStyleVisible;
+      var coordinates = {
+        left: "".concat(props.data.x * tempLitStyles.tileSize, "px"),
+        top: "".concat(props.data.y * tempLitStyles.tileSize, "px")
       };
-
-      if (this.props.data.visible) {
-        hintStyle = {
-          backgroundColor: 'rgba(175, 175, 175, 0.9)',
-          zIndex: '1000',
-          position: 'absolute',
-          width: '192px',
-          height: '64px',
-          overflow: 'hidden',
-          padding: '8px',
-          borderRadius: '8px',
-          textAlign: 'center',
-          display: 'block',
-          border: '1px solid black',
-          fontWeight: 'bold',
-          left: "".concat(this.props.data.x * 64, "px"),
-          top: "".concat(this.props.data.y * 64, "px")
-        };
-      }
-
-      return /*#__PURE__*/react_default.a.createElement("div", {
-        style: hintStyle
-      }, this.getBlock());
+      Object.assign(hintStyle, coordinates);
     }
-  }]);
 
-  return Hint;
-}(react_default.a.Component);
-
-/* harmony default export */ var map_Hint = (Hint_Hint);
-// CONCATENATED MODULE: ./client/map/Map.jsx
-function Map_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Map_typeof = function _typeof(obj) { return typeof obj; }; } else { Map_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Map_typeof(obj); }
-
-function Map_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function Map_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function Map_createClass(Constructor, protoProps, staticProps) { if (protoProps) Map_defineProperties(Constructor.prototype, protoProps); if (staticProps) Map_defineProperties(Constructor, staticProps); return Constructor; }
-
-function Map_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) Map_setPrototypeOf(subClass, superClass); }
-
-function Map_setPrototypeOf(o, p) { Map_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return Map_setPrototypeOf(o, p); }
-
-function Map_createSuper(Derived) { var hasNativeReflectConstruct = Map_isNativeReflectConstruct(); return function _createSuperInternal() { var Super = Map_getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = Map_getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Map_possibleConstructorReturn(this, result); }; }
-
-function Map_possibleConstructorReturn(self, call) { if (call && (Map_typeof(call) === "object" || typeof call === "function")) { return call; } return Map_assertThisInitialized(self); }
-
-function Map_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function Map_isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function Map_getPrototypeOf(o) { Map_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return Map_getPrototypeOf(o); }
-
-
-
-
-
-
-
-
-
-
-var Map_Map = /*#__PURE__*/function (_React$Component) {
-  Map_inherits(Map, _React$Component);
-
-  var _super = Map_createSuper(Map);
-
-  function Map(props) {
-    var _this;
-
-    Map_classCallCheck(this, Map);
-
-    _this = _super.call(this, props);
-    _this.state = {
-      path: [],
-      currentItem: -1,
-      hint: {
-        x: 0,
-        y: 0,
-        msg: '',
-        visible: false
-      }
-    };
-    _this.pathed = false; // test only
-
-    _this.createMap = _this.createMap.bind(Map_assertThisInitialized(_this));
-    _this.getPath = _this.getPath.bind(Map_assertThisInitialized(_this));
-    _this.getBinaryMap = _this.getBinaryMap.bind(Map_assertThisInitialized(_this));
-    _this.nextItem = _this.nextItem.bind(Map_assertThisInitialized(_this));
-    _this.setHint = _this.setHint.bind(Map_assertThisInitialized(_this)); // for path finding, only needs to currently run once
-
-    _this.binaryMap = _this.getBinaryMap();
-    return _this;
+    return hintStyle;
   }
 
-  Map_createClass(Map, [{
-    key: "nextItem",
-    value: function nextItem() {
-      // goes to next item on the list and finds its path
-      if (this.state.currentItem < this.props.chosenItems.length - 1) {
-        var currItem = this.state.currentItem + 1; // update youre here to last location
+  return /*#__PURE__*/react_default.a.createElement("div", {
+    style: getHintStyle()
+  }, getBlock());
+}
 
-        var lastGrid;
+/* harmony default export */ var map_Hint = (Hint);
+// CONCATENATED MODULE: ./client/map/Map.jsx
+function Map_slicedToArray(arr, i) { return Map_arrayWithHoles(arr) || Map_iterableToArrayLimit(arr, i) || Map_unsupportedIterableToArray(arr, i) || Map_nonIterableRest(); }
 
-        if (this.state.path.length <= 1) {
-          lastGrid = this.props.youreHere;
-        } else {
-          // -2 as the last item in path should be an unwalkable area
-          lastGrid = this.state.path[this.state.path.length - 2];
-        }
+function Map_nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-        var newX = lastGrid.x;
-        var newY = lastGrid.y;
-        var newPath = this.getPath(newX, newY, this.props.chosenItems[currItem].x, this.props.chosenItems[currItem].y);
-        this.props.setYoureHere(newX, newY);
-        this.setState({
-          currentItem: currItem,
-          path: newPath
+function Map_unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return Map_arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return Map_arrayLikeToArray(o, minLen); }
+
+function Map_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function Map_iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function Map_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+function Map(props) {
+  var _useState = Object(react["useState"])([]),
+      _useState2 = Map_slicedToArray(_useState, 2),
+      path = _useState2[0],
+      setPath = _useState2[1];
+
+  var _useState3 = Object(react["useState"])(-1),
+      _useState4 = Map_slicedToArray(_useState3, 2),
+      currentItem = _useState4[0],
+      setCurrentItem = _useState4[1];
+
+  var _useState5 = Object(react["useState"])({
+    x: 0,
+    y: 0,
+    msg: '',
+    visible: false
+  }),
+      _useState6 = Map_slicedToArray(_useState5, 2),
+      hint = _useState6[0],
+      setHint = _useState6[1];
+
+  var _useState7 = Object(react["useState"])([]),
+      _useState8 = Map_slicedToArray(_useState7, 2),
+      binaryMap = _useState8[0],
+      setBinaryMap = _useState8[1];
+
+  function nextItem() {
+    // goes to next item on the list and finds its path
+    if (currentItem < props.chosenItems.length - 1) {
+      var currItem = currentItem + 1; // update youre here to last location
+
+      var lastGrid;
+
+      if (path.length <= 1) {
+        lastGrid = props.youreHere;
+      } else {
+        // -2 as the last item in path should be an unwalkable area
+        lastGrid = path[path.length - 2];
+      }
+
+      var newX = lastGrid.x;
+      var newY = lastGrid.y;
+      var newPath = getPath(newX, newY, props.chosenItems[currItem].x, props.chosenItems[currItem].y);
+      props.setYoureHere({
+        x: newX,
+        y: newY
+      });
+      setCurrentItem(currItem);
+      setPath(newPath);
+    }
+  }
+
+  function getPath(startX, startY, targetX, targetY) {
+    // finds and returns grid elements to location
+    var graph = binaryMap;
+    var start = graph.grid[startX][startY];
+    var itemBlock = graph.grid[targetX][targetY]; // find nearest open square if the target location is not walkable. astar wont work if destination is not walkable
+
+    if (graph.grid[targetX][targetY].weight !== 1) {
+      if (graph.grid[targetX][targetY - 1].weight === 1) {
+        targetY -= 1;
+      } else if (graph.grid[targetX][targetY + 1].weight === 1) {
+        targetY += 1;
+      } else if (graph.grid[targetX - 1][targetY].weight === 1) {
+        targetX -= 1;
+      } else if (graph.grid[targetX + 1][targetY].weight === 1) {
+        targetX += 1;
+      }
+    }
+
+    var end = graph.grid[targetX][targetY];
+    var result = astar["astar"].search(graph, start, end); // add the original item location for highlighting later
+
+    result.push(itemBlock);
+    return result;
+  }
+
+  function createMap() {
+    // returns visual blocks
+    var mapX = props.location.size_x;
+    var mapY = props.location.size_y;
+    var map = [];
+
+    for (var y = 0; y < mapY; y++) {
+      var rowChildren = [];
+
+      for (var x = 0; x < mapX; x++) {
+        var block = /*#__PURE__*/react_default.a.createElement(map_Block, {
+          x: x,
+          y: y,
+          location: props.location,
+          youreHere: props.youreHere,
+          path: path,
+          setHint: changeHint
         });
+        rowChildren.push(block);
       }
-    }
-  }, {
-    key: "getPath",
-    value: function getPath(startX, startY, targetX, targetY) {
-      // finds and returns grid elements to location
-      var graph = this.binaryMap;
-      var start = graph.grid[startX][startY];
-      var itemBlock = graph.grid[targetX][targetY]; // find nearest open square if the target location is not walkable. astar wont work if destination is not walkable
 
-      if (graph.grid[targetX][targetY].weight !== 1) {
-        if (graph.grid[targetX][targetY - 1].weight === 1) {
-          targetY -= 1;
-        } else if (graph.grid[targetX][targetY + 1].weight === 1) {
-          targetY += 1;
-        } else if (graph.grid[targetX - 1][targetY].weight === 1) {
-          targetX -= 1;
-        } else if (graph.grid[targetX + 1][targetY].weight === 1) {
-          targetX += 1;
+      map.push( /*#__PURE__*/react_default.a.createElement("div", {
+        className: css_map_module.mapRow
+      }, rowChildren));
+    }
+
+    return map;
+  }
+
+  function getBinaryMap() {
+    // for astar path finding
+    var newBinaryMap = [];
+    var mapX = props.location.size_x;
+    var mapY = props.location.size_y;
+
+    for (var y = 0; y < mapY; y++) {
+      var row = [];
+
+      for (var x = 0; x < mapX; x++) {
+        row.push(1);
+      }
+
+      newBinaryMap[y] = row;
+    }
+
+    axios_default.a.get("".concat(connection_default.a.path, "/api/blocks/").concat(props.location.id)).then(function (res) {
+      // get id by coordinates
+      if (res.data.length > 0) {
+        return res.data;
+      } else {
+        throw 'No data';
+      }
+    }).then(function (unwalkableBlocks) {
+      // set unwalkables
+      for (var i = 0; i < unwalkableBlocks.length; i++) {
+        var _x = unwalkableBlocks[i].x;
+        var _y = unwalkableBlocks[i].y;
+
+        if (newBinaryMap[_x][_y] !== undefined) {
+          newBinaryMap[_x][_y] = 0;
         }
       }
 
-      var end = graph.grid[targetX][targetY];
-      var result = astar["astar"].search(graph, start, end); // add the original item location for highlighting later
+      return;
+    }).then(function () {
+      setBinaryMap(new astar["Graph"](newBinaryMap));
+    })["catch"](function (err) {});
+  }
 
-      result.push(itemBlock);
-      return result;
+  function changeHint() {
+    var visible = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : hint.visible;
+    var x = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : hint.x;
+    var y = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : hint.y;
+    var msg = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : hint.msg;
+    var newX = x;
+    var newY = y;
+    var newMsg = msg;
+    var newVisible = visible;
+    var currentX = hint.x;
+    var currentY = hint.y;
+    var currentMsg = hint.msg;
+    var currentVisible = hint.visible; // only update if theres a change
+
+    if (newX !== currentX || newY !== currentY || newMsg !== currentMsg || currentVisible !== currentVisible) {
+      setHint({
+        x: newX,
+        y: newY,
+        msg: newMsg,
+        visible: newVisible
+      });
     }
-  }, {
-    key: "createMap",
-    value: function createMap() {
-      // returns visual blocks
-      var mapX = this.props.location.size_x;
-      var mapY = this.props.location.size_y;
-      var map = [];
+  }
 
-      for (var y = 0; y < mapY; y++) {
-        var rowChildren = [];
+  Object(react["useEffect"])(function () {
+    getBinaryMap();
+  }, []);
+  return /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement(map_Hint, {
+    data: hint
+  }), /*#__PURE__*/react_default.a.createElement("div", {
+    className: css_map_module.map
+  }, createMap()), /*#__PURE__*/react_default.a.createElement(map_PathList, {
+    chosenItems: props.chosenItems,
+    currentItem: currentItem,
+    nextItem: nextItem,
+    changePage: props.changePage
+  }));
+}
 
-        for (var x = 0; x < mapX; x++) {
-          var block = /*#__PURE__*/react_default.a.createElement(map_Block, {
-            x: x,
-            y: y,
-            location: this.props.location,
-            youreHere: this.props.youreHere,
-            path: this.state.path,
-            setHint: this.setHint
-          });
-          rowChildren.push(block);
-        }
-
-        map.push( /*#__PURE__*/react_default.a.createElement("div", {
-          className: css_map_module.mapRow
-        }, rowChildren));
-      }
-
-      return map;
-    }
-  }, {
-    key: "getBinaryMap",
-    value: function getBinaryMap() {
-      var _this2 = this;
-
-      // for astar path finding
-      var binaryMap = [];
-      var mapX = this.props.location.size_x;
-      var mapY = this.props.location.size_y;
-
-      for (var y = 0; y < mapY; y++) {
-        var row = [];
-
-        for (var x = 0; x < mapX; x++) {
-          row.push(1);
-        }
-
-        binaryMap[y] = row;
-      }
-
-      axios_default.a.get("".concat(connection_default.a.path, "/api/blocks/").concat(this.props.location.id)).then(function (res) {
-        // get id by coordinates
-        if (res.data.length > 0) {
-          return res.data;
-        } else {
-          throw 'No data';
-        }
-      }).then(function (unwalkableBlocks) {
-        // set unwalkables
-        for (var i = 0; i < unwalkableBlocks.length; i++) {
-          var _x = unwalkableBlocks[i].x;
-          var _y = unwalkableBlocks[i].y;
-
-          if (binaryMap[_x][_y] !== undefined) {
-            binaryMap[_x][_y] = 0;
-          }
-        }
-
-        return;
-      }).then(function () {
-        _this2.binaryMap = new astar["Graph"](binaryMap);
-      })["catch"](function (err) {});
-    }
-  }, {
-    key: "setHint",
-    value: function setHint() {
-      var visible = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.state.hint.visible;
-      var x = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.state.hint.x;
-      var y = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : this.state.hint.y;
-      var msg = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : this.state.hint.msg;
-      var newX = x;
-      var newY = y;
-      var newMsg = msg;
-      var newVisible = visible;
-      var currentX = this.state.hint.x;
-      var currentY = this.state.hint.y;
-      var currentMsg = this.state.hint.msg;
-      var currentVisible = this.state.hint.visible; // only update if theres a change
-
-      if (newX !== currentX || newY !== currentY || newMsg !== currentMsg || currentVisible !== currentVisible) {
-        this.setState({
-          hint: {
-            x: newX,
-            y: newY,
-            msg: newMsg,
-            visible: newVisible
-          }
-        });
-      }
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement(map_Hint, {
-        data: this.state.hint
-      }), /*#__PURE__*/react_default.a.createElement("div", {
-        className: css_map_module.map
-      }, this.createMap()), /*#__PURE__*/react_default.a.createElement(map_PathList, {
-        chosenItems: this.props.chosenItems,
-        currentItem: this.state.currentItem,
-        nextItem: this.nextItem,
-        changePage: this.props.changePage
-      }));
-    }
-  }]);
-
-  return Map;
-}(react_default.a.Component);
-
-/* harmony default export */ var map_Map = (Map_Map);
+/* harmony default export */ var map_Map = (Map);
 // CONCATENATED MODULE: ./client/App.jsx
-function App_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { App_typeof = function _typeof(obj) { return typeof obj; }; } else { App_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return App_typeof(obj); }
-
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || App_unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
 function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
 
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return App_arrayLikeToArray(arr); }
 
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+function App_slicedToArray(arr, i) { return App_arrayWithHoles(arr) || App_iterableToArrayLimit(arr, i) || App_unsupportedIterableToArray(arr, i) || App_nonIterableRest(); }
 
-function App_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function App_nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function App_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function App_unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return App_arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return App_arrayLikeToArray(o, minLen); }
 
-function App_createClass(Constructor, protoProps, staticProps) { if (protoProps) App_defineProperties(Constructor.prototype, protoProps); if (staticProps) App_defineProperties(Constructor, staticProps); return Constructor; }
+function App_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function App_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) App_setPrototypeOf(subClass, superClass); }
+function App_iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
-function App_setPrototypeOf(o, p) { App_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return App_setPrototypeOf(o, p); }
-
-function App_createSuper(Derived) { var hasNativeReflectConstruct = App_isNativeReflectConstruct(); return function _createSuperInternal() { var Super = App_getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = App_getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return App_possibleConstructorReturn(this, result); }; }
-
-function App_possibleConstructorReturn(self, call) { if (call && (App_typeof(call) === "object" || typeof call === "function")) { return call; } return App_assertThisInitialized(self); }
-
-function App_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function App_isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function App_getPrototypeOf(o) { App_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return App_getPrototypeOf(o); }
+function App_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
@@ -4478,198 +4130,157 @@ function App_getPrototypeOf(o) { App_getPrototypeOf = Object.setPrototypeOf ? Ob
 
 
 
- // component did mount
 
-var App_App = /*#__PURE__*/function (_React$Component) {
-  App_inherits(App, _React$Component);
 
-  var _super = App_createSuper(App);
+function App() {
+  var _useState = Object(react["useState"])({
+    x: 0,
+    y: 0
+  }),
+      _useState2 = App_slicedToArray(_useState, 2),
+      youreHere = _useState2[0],
+      setYoureHere = _useState2[1];
 
-  function App(props) {
-    var _this;
+  var _useState3 = Object(react["useState"])({
+    id: 1,
+    loc_name: '',
+    size_x: 0,
+    size_y: 0
+  }),
+      _useState4 = App_slicedToArray(_useState3, 2),
+      location = _useState4[0],
+      setLocation = _useState4[1];
 
-    App_classCallCheck(this, App);
+  var _useState5 = Object(react["useState"])(0),
+      _useState6 = App_slicedToArray(_useState5, 2),
+      page = _useState6[0],
+      setPage = _useState6[1];
 
-    _this = _super.call(this, props);
-    _this.state = {
-      youreHere: {
-        x: 0,
-        y: 0
-      },
-      location: {
-        id: 1,
-        loc_name: '',
-        size_x: 0,
-        size_y: 0
-      },
-      page: 0,
-      chosenItems: [],
-      items: []
-    };
-    _this.getLocation = _this.getLocation.bind(App_assertThisInitialized(_this));
+  var _useState7 = Object(react["useState"])([]),
+      _useState8 = App_slicedToArray(_useState7, 2),
+      chosenItems = _useState8[0],
+      setChosenItems = _useState8[1];
 
-    _this.getLocation();
+  var _useState9 = Object(react["useState"])([]),
+      _useState10 = App_slicedToArray(_useState9, 2),
+      items = _useState10[0],
+      setItems = _useState10[1];
 
-    _this.getItems = _this.getItems.bind(App_assertThisInitialized(_this));
-
-    _this.getItems();
-
-    _this.addChosenItem = _this.addChosenItem.bind(App_assertThisInitialized(_this));
-    _this.getPage = _this.getPage.bind(App_assertThisInitialized(_this));
-    _this.changePage = _this.changePage.bind(App_assertThisInitialized(_this));
-    _this.removeChosenItem = _this.removeChosenItem.bind(App_assertThisInitialized(_this));
-    _this.setYoureHere = _this.setYoureHere.bind(App_assertThisInitialized(_this));
-    return _this;
+  function getItems() {
+    axios_default.a.get("".concat(connection_default.a.path, "/api/location/").concat(location.id, "/items")).then(function (res) {
+      // get id by coordinates
+      if (res.data.length > 0) {
+        return res.data;
+      } else {
+        throw 'No data';
+      }
+    }).then(function (items) {
+      setItems(items);
+    })["catch"](function (err) {
+      console.log(err);
+    });
   }
 
-  App_createClass(App, [{
-    key: "setYoureHere",
-    value: function setYoureHere(x, y) {
-      this.setState({
-        youreHere: {
-          x: x,
-          y: y
-        }
-      });
-    }
-  }, {
-    key: "getItems",
-    value: function getItems() {
-      var _this2 = this;
+  function addChosenItem(item_id) {
+    var getDistance = function getDistance(xA, yA, xB, yB) {
+      var xDiff = xA - xB;
+      var yDiff = yA - yB;
+      return Math.sqrt(xDiff * xDiff + yDiff * yDiff);
+    };
 
-      axios_default.a.get("".concat(connection_default.a.path, "/api/location/").concat(this.state.location.id, "/items")).then(function (res) {
-        // get id by coordinates
-        if (res.data.length > 0) {
-          return res.data;
-        } else {
-          throw 'No data';
-        }
-      }).then(function (items) {
-        _this2.setState({
+    var newChosenItems;
+
+    if (chosenItems.length <= 0) {
+      newChosenItems = [];
+    } else {
+      newChosenItems = _toConsumableArray(chosenItems);
+    }
+
+    for (var i = 0; i < items.length; i++) {
+      if (items[i].id === item_id) {
+        newChosenItems.push(items[i]);
+        break;
+      }
+    } // sort to closest. we dont know the paths yet
+
+
+    newChosenItems.sort(function (a, b) {
+      var distanceA = getDistance(a.x, a.y, youreHere.x, youreHere.y);
+      var distanceB = getDistance(b.x, b.y, youreHere.x, youreHere.y);
+      return distanceA - distanceB;
+    });
+    setChosenItems(newChosenItems);
+  }
+
+  function removeChosenItem(item_id) {
+    var newChosenItems = _toConsumableArray(chosenItems);
+
+    for (var i = 0; i < newChosenItems.length; i++) {
+      if (newChosenItems[i].id === item_id) {
+        newChosenItems.splice(i, 1);
+        setChosenItems(newChosenItems);
+      }
+    }
+  }
+
+  function getLocation() {
+    axios_default.a.get("".concat(connection_default.a.path, "/api/location/").concat(location.id)).then(function (res) {
+      setLocation(res.data[0]);
+    })["catch"](function (err) {
+      console.log(err);
+    });
+  }
+
+  function changePage(pageId) {
+    setPage(pageId);
+
+    if (pageId === 0) {
+      setYoureHere({
+        x: 0,
+        y: 0
+      }); // TODO: allow sql to store this info
+    }
+  }
+
+  function getPage(pageId) {
+    switch (pageId) {
+      case 0:
+        return /*#__PURE__*/react_default.a.createElement(list_List, {
+          location: location,
+          changePage: changePage,
+          addChosenItem: addChosenItem,
+          removeChosenItem: removeChosenItem,
+          chosenItems: chosenItems,
           items: items
         });
-      })["catch"](function (err) {
-        console.log(err);
-      });
-    }
-  }, {
-    key: "addChosenItem",
-    value: function addChosenItem(item_id) {
-      var _this3 = this;
+        break;
 
-      var getDistance = function getDistance(xA, yA, xB, yB) {
-        var xDiff = xA - xB;
-        var yDiff = yA - yB;
-        return Math.sqrt(xDiff * xDiff + yDiff * yDiff);
-      };
-
-      var newChosenItems;
-
-      if (this.state.chosenItems.length <= 0) {
-        newChosenItems = [];
-      } else {
-        newChosenItems = _toConsumableArray(this.state.chosenItems);
-      }
-
-      for (var i = 0; i < this.state.items.length; i++) {
-        if (this.state.items[i].id === item_id) {
-          newChosenItems.push(this.state.items[i]);
-          break;
-        }
-      } // sort to closest. we dont know the paths yet
-
-
-      newChosenItems.sort(function (a, b) {
-        var distanceA = getDistance(a.x, a.y, _this3.state.youreHere.x, _this3.state.youreHere.y);
-        var distanceB = getDistance(b.x, b.y, _this3.state.youreHere.x, _this3.state.youreHere.y);
-        return distanceA - distanceB;
-      });
-      this.setState({
-        chosenItems: newChosenItems
-      });
-    } // removes item based on the id (database record id, not index) relevant to the item
-
-  }, {
-    key: "removeChosenItem",
-    value: function removeChosenItem(item_id) {
-      var newChosenItems = _toConsumableArray(this.state.chosenItems);
-
-      for (var i = 0; i < newChosenItems.length; i++) {
-        if (newChosenItems[i].id === item_id) {
-          newChosenItems.splice(i, 1);
-          this.setState({
-            chosenItems: newChosenItems
-          });
-        }
-      }
-    }
-  }, {
-    key: "getLocation",
-    value: function getLocation() {
-      var _this4 = this;
-
-      axios_default.a.get("".concat(connection_default.a.path, "/api/location/").concat(this.state.location.id)).then(function (res) {
-        _this4.setState({
-          location: res.data[0]
+      case 1:
+        return /*#__PURE__*/react_default.a.createElement(map_Map, {
+          location: location,
+          changePage: changePage,
+          chosenItems: chosenItems,
+          setYoureHere: setYoureHere,
+          youreHere: youreHere
         });
-      })["catch"](function (err) {
-        console.log(err);
-      });
+        break;
+
+      default:
+        return /*#__PURE__*/react_default.a.createElement("div", null);
+        break;
     }
-  }, {
-    key: "changePage",
-    value: function changePage(pageId) {
-      this.setState({
-        page: pageId
-      });
+  }
 
-      if (pageId === 0) {
-        this.setYoureHere(0, 0);
-      }
-    }
-  }, {
-    key: "getPage",
-    value: function getPage(pageId) {
-      switch (pageId) {
-        case 0:
-          return /*#__PURE__*/react_default.a.createElement(list_List, {
-            location: this.state.location,
-            changePage: this.changePage,
-            addChosenItem: this.addChosenItem,
-            removeChosenItem: this.removeChosenItem,
-            chosenItems: this.state.chosenItems,
-            items: this.state.items
-          });
-          break;
+  Object(react["useEffect"])(function () {
+    getLocation();
+    getItems();
+  }, []);
+  return /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("h1", null, location.loc_name), /*#__PURE__*/react_default.a.createElement("div", {
+    className: css_app_module.app
+  }, getPage(page)));
+}
 
-        case 1:
-          return /*#__PURE__*/react_default.a.createElement(map_Map, {
-            location: this.state.location,
-            changePage: this.changePage,
-            chosenItems: this.state.chosenItems,
-            setYoureHere: this.setYoureHere,
-            youreHere: this.state.youreHere
-          });
-          break;
-
-        default:
-          return /*#__PURE__*/react_default.a.createElement("div", null);
-          break;
-      }
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("h1", null, this.state.location.loc_name), /*#__PURE__*/react_default.a.createElement("div", {
-        className: css_app_module.app
-      }, this.getPage(this.state.page)));
-    }
-  }]);
-
-  return App;
-}(react_default.a.Component);
-
-/* harmony default export */ var client_App = (App_App);
+/* harmony default export */ var client_App = (App);
 // CONCATENATED MODULE: ./client/index.jsx
 
 

@@ -1,54 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
 import conn from '../connection.js';
-import styles from './css/block.module.css'
 import TemplateStyles from './css/template.literals.js';
 
-class Block extends React.Component {
-  constructor(props) {
-    super(props);
+function Block(props) {
+  const [id, setId] = useState(null);
+  const [items, setItems] = useState([]);
+  const tempLitStyles = new TemplateStyles();
 
-    this.tempLitStyles = new TemplateStyles();
-
-    this.state = {
-      x: this.props.x,
-      y: this.props.y,
-      id: null,
-      items: []
-    };
-
-    this.getId = this.getId.bind(this);
-    this.getItems = this.getItems.bind(this);
-    this.getBlockData = this.getBlockData.bind(this);
-    this.getVisualBlock = this.getVisualBlock.bind(this);
-
-    this.mouseOut = this.mouseOut.bind(this);
-    this.mouseOver = this.mouseOver.bind(this);
-  }
-
-  getId() {
-    return this.state.id;
-  }
-
-  getItems() {
-    return this.state.items;
-  }
-
-  getIsWalkable() {
-    if (this.state.id === null) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  getCoordinates() {
-    return {x: this.state.x, y: this.state.y};
-  }
-
-  getBlockData() {
-    axios.get(`${conn.path}/api/blocks/${this.props.location.id}/${this.state.x}/${this.state.y}`).then((res) => {
+  function getBlockData() {
+    axios.get(`${conn.path}/api/blocks/${props.location.id}/${props.x}/${props.y}`).then((res) => {
       // get id by coordinates
       if (res.data.length > 0) {
         return res.data[0].id;
@@ -56,84 +17,82 @@ class Block extends React.Component {
         throw 'No data';
       }
     }).then((blockId) => {
-      this.setState({id: blockId});
+      setId(blockId);
 
       // get items by id
       return axios.get(`${conn.path}/api/blocks/${blockId}/items`);
     }).then((items) => {
       if (items.data.length > 0) {
-        this.setState({items: items.data})
+        setItems(items.data);
       } else {
         throw 'No items';
       }
     }).catch(err => {});
   }
 
-  getVisualBlock() {
+  function getVisualBlock() {
     // check if this should be highlighted
     let isPath = false;
-    for (let i = 0; i < this.props.path.length; i++) {
-      if (this.props.path[i].x === this.state.x && this.props.path[i].y === this.state.y) {
+    for (let i = 0; i < props.path.length; i++) {
+      if (props.path[i].x === props.x && props.path[i].y === props.y) {
         isPath = true;
         break;
       }
     }
 
-    if (this.state.id !== null) {;
+    if (id !== null) {;
       // where the item is
-        if (this.props.path.length > 0) {
-          const itemBlock = this.props.path[this.props.path.length - 1];
-          if (itemBlock.x === this.state.x && itemBlock.y === this.state.y) {
-            return (<div style={this.tempLitStyles.itemHereStyle} onMouseEnter={this.mouseOver} onMouseLeave={this.mouseOut}></div>);
+        if (props.path.length > 0) {
+          const itemBlock = props.path[props.path.length - 1];
+          if (itemBlock.x === props.x && itemBlock.y === props.y) {
+            return (<div style={tempLitStyles.itemHereStyle} onMouseEnter={mouseOver} onMouseLeave={mouseOut}></div>);
           }
         }
 
         // any other unwalkable area
-        return (<div style={this.tempLitStyles.unwalkableStyle} onMouseEnter={this.mouseOver} onMouseLeave={this.mouseOut}></div>);
+        return (<div style={tempLitStyles.unwalkableStyle} onMouseEnter={mouseOver} onMouseLeave={mouseOut}></div>);
     } else {
-      if (this.props.x === this.props.youreHere.x && this.props.y === this.props.youreHere.y) {
+      if (props.x === props.youreHere.x && props.y === props.youreHere.y) {
         // youre here
-        return (<div style={this.tempLitStyles.youreHereStyle}></div>);
+        return (<div style={tempLitStyles.youreHereStyle}></div>);
       } else if (isPath) {
         // walkable path
-        return (<div style={this.tempLitStyles.walkablePathStyle}></div>);
+        return (<div style={tempLitStyles.walkablePathStyle}></div>);
       } else {
         // regular empty space
-        return (<div style={this.tempLitStyles.emptySpaceStyle}></div>);
+        return (<div style={tempLitStyles.emptySpaceStyle}></div>);
       }
     }
   }
 
-  mouseOver() {
-    if (this.state.items.length <= 0) {
+  function mouseOver() {
+    if (items.length <= 0) {
       return;
     }
 
     // build msg
     const maxItems = 5;
     let msg = '';
-    for (let i = 0; i < this.state.items.length && i < maxItems; i++) {
-      msg += `${this.state.items[i].info}. `;
+    for (let i = 0; i < items.length && i < maxItems; i++) {
+      msg += `${items[i].info}. `;
     }
 
-    this.props.setHint(true, this.state.x, this.state.y, msg);
+    props.setHint(true, props.x, props.y, msg);
   }
 
-  mouseOut() {
-    this.props.setHint(false, 0, 0, '');
+  function mouseOut() {
+    props.setHint(false, 0, 0, '');
   }
 
-  render() {
-    if (this.state.id === null) {
-      this.getBlockData();
-    }
+  useEffect(() => {
+    getBlockData();
+  }, []);
 
-    return (
-      <div className={styles.mapBlock}>
-        {this.getVisualBlock()}
-      </div>
-    );
-  }
+  return (
+    <div style={tempLitStyles.mapBlock}>
+      {getVisualBlock()}
+    </div>
+  );
 }
 
 export default Block;

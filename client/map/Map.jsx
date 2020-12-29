@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {astar, Graph} from './astar.js';
 import styles from './css/map.module.css'
@@ -7,56 +7,41 @@ import Block from './Block.jsx';
 import PathList from './PathList.jsx';
 import Hint from './Hint.jsx';
 
-class Map extends React.Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      path: [],
-      currentItem: -1,
-      hint: {x: 0, y: 0, msg: '', visible: false}
-    };
+function Map(props) {
+  const [path, setPath] = useState([]);
+  const [currentItem, setCurrentItem] = useState(-1);
+  const [hint, setHint] = useState({x: 0, y: 0, msg: '', visible: false});
+  const [binaryMap, setBinaryMap] = useState([]);
 
-    this.pathed = false; // test only
-    this.createMap = this.createMap.bind(this);
-    this.getPath = this.getPath.bind(this);
-    this.getBinaryMap = this.getBinaryMap.bind(this);
-    this.nextItem = this.nextItem.bind(this);
-    this.setHint = this.setHint.bind(this);
-
-    // for path finding, only needs to currently run once
-    this.binaryMap = this.getBinaryMap();
-  }
-
-  nextItem() {
+  function nextItem() {
     // goes to next item on the list and finds its path
-    if (this.state.currentItem < (this.props.chosenItems.length - 1)) {
-      const currItem = (this.state.currentItem + 1);
+    if (currentItem < (props.chosenItems.length - 1)) {
+      const currItem = (currentItem + 1);
 
       // update youre here to last location
       let lastGrid;
-      if (this.state.path.length <= 1) {
-        lastGrid = this.props.youreHere;
+      if (path.length <= 1) {
+        lastGrid = props.youreHere;
       } else {
         // -2 as the last item in path should be an unwalkable area
-        lastGrid = this.state.path[this.state.path.length - 2];
+        lastGrid = path[path.length - 2];
       }
 
       const newX = lastGrid.x;
       const newY = lastGrid.y;
 
-      const newPath = this.getPath(newX, newY, this.props.chosenItems[currItem].x, this.props.chosenItems[currItem].y);
+      const newPath = getPath(newX, newY, props.chosenItems[currItem].x, props.chosenItems[currItem].y);
 
-      this.props.setYoureHere(newX, newY);
-      this.setState({currentItem: currItem,
-        path: newPath
-      });
+      props.setYoureHere({x: newX, y: newY});
+      setCurrentItem(currItem);
+      setPath(newPath);
     }
   }
 
-  getPath(startX, startY, targetX, targetY) {
+  function getPath(startX, startY, targetX, targetY) {
     // finds and returns grid elements to location
-    const graph = this.binaryMap;
+    const graph = binaryMap;
     const start = graph.grid[startX][startY];
     const itemBlock = graph.grid[targetX][targetY];
 
@@ -82,17 +67,17 @@ class Map extends React.Component {
     return result;
   }
 
-  createMap() {
+  function createMap() {
     // returns visual blocks
-    const mapX = this.props.location.size_x;
-    const mapY = this.props.location.size_y;
+    const mapX = props.location.size_x;
+    const mapY = props.location.size_y;
     const map = [];
 
     for (let y = 0; y < mapY; y++) {
       const rowChildren = [];
 
       for (let x = 0; x < mapX; x++) {
-        const block = (<Block x={x} y={y} location={this.props.location} youreHere={this.props.youreHere} path={this.state.path} setHint={this.setHint}/>);
+        const block = (<Block x={x} y={y} location={props.location} youreHere={props.youreHere} path={path} setHint={changeHint}/>);
         rowChildren.push(block);
       }
 
@@ -102,22 +87,22 @@ class Map extends React.Component {
     return map;
   }
 
-  getBinaryMap() {
+  function getBinaryMap() {
     // for astar path finding
-    let binaryMap = [];
-    const mapX = this.props.location.size_x;
-    const mapY = this.props.location.size_y;
+    let newBinaryMap = [];
+    const mapX = props.location.size_x;
+    const mapY = props.location.size_y;
 
     for (let y = 0; y < mapY; y++) {
       let row = [];
       for (let x = 0; x < mapX; x++) {
         row.push(1);
       }
-      binaryMap[y] = row;
+      newBinaryMap[y] = row;
     }
 
 
-    axios.get(`${conn.path}/api/blocks/${this.props.location.id}`).then((res) => {
+    axios.get(`${conn.path}/api/blocks/${props.location.id}`).then((res) => {
       // get id by coordinates
       if (res.data.length > 0) {
         return res.data;
@@ -130,45 +115,47 @@ class Map extends React.Component {
         const x = unwalkableBlocks[i].x;
         const y = unwalkableBlocks[i].y;
 
-        if (binaryMap[x][y] !== undefined) {
-          binaryMap[x][y] = 0;
+        if (newBinaryMap[x][y] !== undefined) {
+          newBinaryMap[x][y] = 0;
         }
       }
 
       return;
     }).then(() => {
-      this.binaryMap = new Graph(binaryMap);
+      setBinaryMap(new Graph(newBinaryMap));
     }).catch(err => {});
   }
 
-  setHint(visible = this.state.hint.visible, x = this.state.hint.x, y = this.state.hint.y, msg = this.state.hint.msg) {
+  function changeHint(visible = hint.visible, x = hint.x, y = hint.y, msg = hint.msg) {
     const newX = x;
     const newY = y;
     const newMsg = msg;
     const newVisible = visible;
 
-    const currentX = this.state.hint.x;
-    const currentY = this.state.hint.y;
-    const currentMsg = this.state.hint.msg;
-    const currentVisible = this.state.hint.visible;
+    const currentX = hint.x;
+    const currentY = hint.y;
+    const currentMsg = hint.msg;
+    const currentVisible = hint.visible;
 
     // only update if theres a change
     if (newX !== currentX || newY !== currentY || newMsg !== currentMsg || currentVisible !== currentVisible) {
-      this.setState({hint: {x: newX, y: newY, msg: newMsg, visible: newVisible}});
+      setHint({x: newX, y: newY, msg: newMsg, visible: newVisible});
     }
   }
 
-  render() {
-    return (
-      <div>
-        <Hint data={this.state.hint}/>
-        <div className={styles.map}>
-          {this.createMap()}
-        </div>
-        <PathList chosenItems={this.props.chosenItems} currentItem={this.state.currentItem} nextItem={this.nextItem} changePage={this.props.changePage}/>
+  useEffect(() => {
+    getBinaryMap();
+  }, []);
+
+  return (
+    <div>
+      <Hint data={hint}/>
+      <div className={styles.map}>
+        {createMap()}
       </div>
-    );
-  }
+      <PathList chosenItems={props.chosenItems} currentItem={currentItem} nextItem={nextItem} changePage={props.changePage}/>
+    </div>
+  );
 }
 
 export default Map;

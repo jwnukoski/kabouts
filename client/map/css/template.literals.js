@@ -3,12 +3,23 @@ import conn from '../../connection.js';
 class TemplateStyles {
   constructor() {
     const tileSize = 64;
+    this.tileSize = tileSize;
+
     const tiles = `url(${conn.path}/tiles.png)`;
     const yourHere = `url(${conn.path}/character.gif)`;
 
     const globalTileStyle = {
       width: `${tileSize}px`,
       height: `${tileSize}px`
+    };
+
+    this.mapBlock = {
+      display: 'inline-block',
+      width: `${tileSize}px`,
+      height: `${tileSize}px`,
+      overflow: 'hidden',
+      padding: 0,
+      margin: 0
     };
 
     this.itemHereStyle = {
@@ -35,6 +46,28 @@ class TemplateStyles {
       background: `${tiles} 0 0`
     };
     Object.assign(this.emptySpaceStyle, globalTileStyle);
+
+    this.hintStyleHidden = {
+      display: 'none',
+      position: 'relative',
+      width: '0px',
+      height: '0px'
+    };
+
+    this.hintStyleVisible = {
+      backgroundColor: 'rgba(175, 175, 175, 0.9)',
+      zIndex: '1000',
+      position: 'absolute',
+      width: `${tileSize * 3}px`,
+      height: `${tileSize}px`,
+      overflow: 'hidden',
+      padding: '8px',
+      borderRadius: '8px',
+      textAlign: 'center',
+      display: 'block',
+      border: '1px solid black',
+      fontWeight: 'bold'
+    };
   }
 }
 
