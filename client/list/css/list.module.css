@@ -19,9 +19,14 @@ h2 {
   padding: 1em;
 }
 
-.deleteBtn, .toMapBtn, .addBtn {
+.toMapBtn, .addBtn {
   background-color: #2CC185;
   color: white;
+}
+
+.deleteBtn {
+  background-color: #bf2b2b;
+  color: black;
 }
 
 .addBtn, .deleteBtn {
@@ -38,9 +43,15 @@ h2 {
 
 .chosenItems ul {
   list-style: none;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .chosenItems ul li {
-  padding: 1em 0 1em 0;
-  text-align: left;
+  padding: 1em;
+  margin: 1em;
+  text-align: center;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
 }

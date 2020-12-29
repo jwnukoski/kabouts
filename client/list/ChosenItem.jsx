@@ -17,7 +17,7 @@ class ChosenItem extends React.Component {
   render() {
     return (
       <div className={styles.chosenItems}>
-        <button className={styles.deleteBtn} onClick={this.handleDeleteClick}>Delete</button>{this.props.item.info}
+        <button className={styles.deleteBtn} onClick={this.handleDeleteClick}>X</button>{this.props.item.info}
       </div>
 
     );

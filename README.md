@@ -26,3 +26,9 @@ npm install -g electron-packager
 electron-packager ./kabouts/ kabouts --platform=linux --arch=x64
 electron-packager ./kabouts/ kabouts --platform=win32 --arch=x64
 electron-packager ./kabouts/ kabouts --platform=darwin --arch=x64
+
+
+## Art
+Credit for some of the placeholder assets:
+https://opengameart.org/content/xmas-pack-2d-assets
+https://opengameart.org/content/lechita

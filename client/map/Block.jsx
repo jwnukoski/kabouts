@@ -3,10 +3,13 @@ import axios from 'axios';
 
 import conn from '../connection.js';
 import styles from './css/block.module.css'
+import TemplateStyles from './css/template.literals.js';
 
 class Block extends React.Component {
   constructor(props) {
     super(props);
+
+    this.tempLitStyles = new TemplateStyles();
 
     this.state = {
       x: this.props.x,
@@ -81,22 +84,22 @@ class Block extends React.Component {
         if (this.props.path.length > 0) {
           const itemBlock = this.props.path[this.props.path.length - 1];
           if (itemBlock.x === this.state.x && itemBlock.y === this.state.y) {
-            return (<div className={styles.itemHere} onMouseEnter={this.mouseOver} onMouseLeave={this.mouseOut}>X</div>);
+            return (<div style={this.tempLitStyles.itemHereStyle} onMouseEnter={this.mouseOver} onMouseLeave={this.mouseOut}></div>);
           }
         }
 
         // any other unwalkable area
-        return (<div className={styles.mapBlockUnwalkable} onMouseEnter={this.mouseOver} onMouseLeave={this.mouseOut}></div>);
+        return (<div style={this.tempLitStyles.unwalkableStyle} onMouseEnter={this.mouseOver} onMouseLeave={this.mouseOut}></div>);
     } else {
       if (this.props.x === this.props.youreHere.x && this.props.y === this.props.youreHere.y) {
         // youre here
-        return (<div className={styles.youreHere}>You're here</div>);
+        return (<div style={this.tempLitStyles.youreHereStyle}></div>);
       } else if (isPath) {
         // walkable path
-        return (<div className={styles.mapBlockPath}></div>);
+        return (<div style={this.tempLitStyles.walkablePathStyle}></div>);
       } else {
         // regular empty space
-        return (<div className={styles.mapBlockWalkable}></div>);
+        return (<div style={this.tempLitStyles.emptySpaceStyle}></div>);
       }
     }
   }
@@ -110,7 +113,7 @@ class Block extends React.Component {
     const maxItems = 5;
     let msg = '';
     for (let i = 0; i < this.state.items.length && i < maxItems; i++) {
-      msg += `${this.state.items[i].info}\n`;
+      msg += `${this.state.items[i].info}. `;
     }
 
     this.props.setHint(true, this.state.x, this.state.y, msg);
