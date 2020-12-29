@@ -3470,7 +3470,7 @@ function AvailableItemsList(props) {
 
 function ChosenItem(props) {
   function handleDeleteClick(e) {
-    this.props.removeChosenItem(this.props.item.id);
+    props.removeChosenItem(props.item.id);
   }
 
   return /*#__PURE__*/react_default.a.createElement("div", {

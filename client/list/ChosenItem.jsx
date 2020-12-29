@@ -3,7 +3,7 @@ import styles from './css/list.module.css';
 
 function ChosenItem(props) {
   function handleDeleteClick(e) {
-    this.props.removeChosenItem(this.props.item.id);
+    props.removeChosenItem(props.item.id);
   }
 
   return (
