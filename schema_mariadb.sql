@@ -15,7 +15,19 @@ CREATE TABLE locations (
   PRIMARY KEY (id),
   loc_name TEXT,
   size_x INT NOT NULL DEFAULT 10,
-  size_y INT NOT NULL DEFAULT 10
+  size_y INT NOT NULL DEFAULT 10,
+  start_x INT NOT NULL DEFAULT 0,
+  start_y INT NOT NULL DEFAULT 0
+);
+
+CREATE TABLE stairs (
+  id INT NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (id),
+  loc_id INT,
+  on_lvl INT NOT NULL DEFAULT 0,
+  to_lvl INT NOT NULL DEFAULT 0,
+  x INT NOT NULL,
+  y INT NOT NULL
 );
 
 CREATE TABLE blocks (
@@ -29,6 +41,8 @@ CREATE TABLE blocks (
 
 ALTER TABLE items ADD FOREIGN KEY fk_items_blocks (block_id) REFERENCES blocks (id) ON DELETE CASCADE;
 ALTER TABLE blocks ADD FOREIGN KEY fk_blocks_locations (loc_id) REFERENCES locations (id) ON DELETE CASCADE;
+ALTER TABLE stairs ADD FOREIGN KEY fk_stairs_locations (loc_id) REFERENCES locations (id) ON DELETE CASCADE;
 
 CREATE INDEX items_block_id ON items (block_id);
 CREATE INDEX blocks_loc_id ON blocks (loc_id);
+CREATE INDEX stairs_loc_id ON stairs (loc_id);
