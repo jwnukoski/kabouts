@@ -9,7 +9,7 @@ function Block(props) {
   const tempLitStyles = new TemplateStyles();
 
   function getBlockData() {
-    axios.get(`${conn.path}/api/blocks/${props.location.id}/${props.x}/${props.y}`).then((res) => {
+    axios.get(`${conn.path}/api/blocks/${props.location.id}/${props.x}/${props.y}/${props.currentFloor}`).then((res) => {
       // get id by coordinates
       if (res.data.length > 0) {
         return res.data[0].id;
@@ -20,14 +20,17 @@ function Block(props) {
       setId(blockId);
 
       // get items by id
-      return axios.get(`${conn.path}/api/blocks/${blockId}/items`);
+      return axios.get(`${conn.path}/api/blocks/items/${blockId}`);
     }).then((items) => {
       if (items.data.length > 0) {
         setItems(items.data);
       } else {
         throw 'No items';
       }
-    }).catch(err => {});
+    }).catch(err => {
+      setId(null);
+      setItems([]);
+    });
   }
 
   function getVisualBlock() {
@@ -86,7 +89,7 @@ function Block(props) {
 
   useEffect(() => {
     getBlockData();
-  }, []);
+  }, [props.currentFloor]);
 
   return (
     <div style={tempLitStyles.mapBlock}>

@@ -21,6 +21,18 @@ app.get('/api/location/:loc_id/items', (req, res) => {
   });
 });
 
+app.get('/api/location/:loc_id/lvls', (req, res) => {
+  const loc = req.params.loc_id;
+
+  db.getLevelCount(loc, (err, info) => {
+    if (err) {
+      res.status(401).send(err);
+    } else {
+      res.status(200).send(info);
+    }
+  });
+});
+
 app.get('/api/location/:loc_id', (req, res) => {
   const loc = req.params.loc_id;
 
@@ -33,10 +45,11 @@ app.get('/api/location/:loc_id', (req, res) => {
   });
 });
 
-app.get('/api/blocks/:loc_id', (req, res) => {
+app.get('/api/blocks/level/:loc_id/:lvl', (req, res) => {
   const loc = req.params.loc_id;
+  const lvl = req.params.lvl;
 
-  db.getLocBlocks(loc, (err, info) => {
+  db.getLocBlocks(loc, lvl, (err, info) => {
     if (err) {
       res.status(401).send(err);
     } else {
@@ -45,7 +58,7 @@ app.get('/api/blocks/:loc_id', (req, res) => {
   });
 });
 
-app.get('/api/blocks/:block_id/items', (req, res) => {
+app.get('/api/blocks/items/:block_id', (req, res) => {
   const block = req.params.block_id;
 
   db.getItemsByBlock(block, (err, info) => {
@@ -57,12 +70,13 @@ app.get('/api/blocks/:block_id/items', (req, res) => {
   });
 });
 
-app.get('/api/blocks/:loc_id/:x/:y', (req, res) => {
+app.get('/api/blocks/:loc_id/:x/:y/:level', (req, res) => {
   const loc_id = req.params.loc_id;
   const x = req.params.x;
   const y = req.params.y;
+  const level = req.params.level;
 
-  db.getBlockIdByCoordinates(loc_id, x, y, (err, info) => {
+  db.getBlockIdByCoordinates(loc_id, x, y, level, (err, info) => {
     if (err) {
       res.status(401).send(err);
     } else {

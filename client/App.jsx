@@ -71,6 +71,7 @@ function App() {
 
   function getLocation() {
     axios.get(`${conn.path}/api/location/${location.id}`).then((res) => {
+      setYoureHere({x: res.data[0].start_x, y: res.data[0].start_y});
       setLocation(res.data[0]);
     }).catch(err => {
       console.log(err);
