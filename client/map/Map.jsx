@@ -100,7 +100,7 @@ function Map(props) {
       const rowChildren = [];
 
       for (let x = 0; x < mapX; x++) {
-        const block = (<Block x={x} y={y} location={props.location} youreHere={props.youreHere} path={path} setHint={changeHint} currentFloor={currentFloor}/>);
+        const block = (<Block x={x} y={y} location={props.location} youreHere={props.youreHere} path={path} setHint={changeHint} currentFloor={currentFloor} stairs={props.stairs}/>);
         rowChildren.push(block);
       }
 

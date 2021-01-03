@@ -85,6 +85,18 @@ app.get('/api/blocks/:loc_id/:x/:y/:level', (req, res) => {
   });
 });
 
+app.get('/api/stairs/:loc_id', (req, res) => {
+  const loc_id = req.params.loc_id;
+
+  db.getStairs(loc_id, (err, stairs) => {
+    if (err) {
+      res.status(401).send(err);
+    } else {
+      res.status(200).send(stairs);
+    }
+  });
+});
+
 app.listen(3000, () => {
   console.log(`App listening on 3000`)
 });

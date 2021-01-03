@@ -60,3 +60,14 @@ module.exports.getLevelCount = function getLevelCount(loc_id, callback) {
   });
 }
 
+module.exports.getStairs = function getStairs(loc_id, callback) {
+  conn.dbConn.query('SELECT on_lvl, to_lvl, x, y FROM stairs WHERE loc_id = ?', [loc_id], (err, res) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, res);
+    }
+  });
+}
+
+

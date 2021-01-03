@@ -43,7 +43,7 @@ function Block(props) {
       }
     }
 
-    if (id !== null) {;
+    if (id !== null) {
       // where the item is
         if (props.path.length > 0) {
           const itemBlock = props.path[props.path.length - 1];
@@ -62,6 +62,13 @@ function Block(props) {
         // walkable path
         return (<div style={tempLitStyles.walkablePathStyle}></div>);
       } else {
+        // stairs
+        for (let i = 0; i < props.stairs.length; i++) {
+          if (props.currentFloor === props.stairs[i].on_lvl && (props.x === props.stairs[i].x && props.y === props.stairs[i].y)) {
+            return (<div style={tempLitStyles.stairsStyle}></div>)
+          }
+        }
+
         // regular empty space
         return (<div style={tempLitStyles.emptySpaceStyle}></div>);
       }

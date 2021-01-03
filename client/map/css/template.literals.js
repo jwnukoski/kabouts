@@ -47,6 +47,11 @@ class TemplateStyles {
     };
     Object.assign(this.emptySpaceStyle, globalTileStyle);
 
+    this.stairsStyle = {
+      background: `${tiles} -${tileSize}px -${tileSize * 2}px`
+    };
+    Object.assign(this.stairsStyle, globalTileStyle);
+
     this.hintStyleHidden = {
       display: 'none',
       position: 'relative',

@@ -98,6 +98,19 @@ if (true) {
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports) {
+
+var port = 3000;
+var host = '127.0.0.1';
+var path = "http://".concat(host, ":").concat(port);
+module.exports = {
+  port: port,
+  host: host,
+  path: path
+};
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -455,20 +468,13 @@ module.exports = {
 
 
 /***/ }),
-/* 2 */
-/***/ (function(module, exports) {
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
 
-var port = 3000;
-var host = '127.0.0.1';
-var path = "http://".concat(host, ":").concat(port);
-module.exports = {
-  port: port,
-  host: host,
-  path: path
-};
+module.exports = __webpack_require__(26);
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -743,7 +749,7 @@ module.exports = function (list, options) {
 };
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -815,12 +821,6 @@ module.exports = function (cssWithMappingToString) {
 };
 
 /***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(26);
-
-/***/ }),
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -859,7 +859,7 @@ if (true) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
 // Imports
 
@@ -879,7 +879,7 @@ ___CSS_LOADER_EXPORT___.locals = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
 // Imports
 
@@ -1315,7 +1315,7 @@ ___CSS_LOADER_EXPORT___.locals = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
 // Imports
 
@@ -1335,7 +1335,7 @@ ___CSS_LOADER_EXPORT___.locals = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
 // Imports
 
@@ -1355,7 +1355,7 @@ ___CSS_LOADER_EXPORT___.locals = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
 // Imports
 
@@ -1491,7 +1491,7 @@ module.exports = function bind(fn, thisArg) {
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(2);
 
 function encode(val) {
   return encodeURIComponent(val).
@@ -1580,7 +1580,7 @@ module.exports = function isCancel(value) {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(2);
 var normalizeHeaderName = __webpack_require__(32);
 
 var DEFAULT_CONTENT_TYPE = {
@@ -1686,7 +1686,7 @@ module.exports = defaults;
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(2);
 var settle = __webpack_require__(33);
 var cookies = __webpack_require__(35);
 var buildURL = __webpack_require__(15);
@@ -1897,7 +1897,7 @@ module.exports = function createError(message, config, code, request, response) 
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(2);
 
 /**
  * Config-specific merge-function which creates a new config-object
@@ -2388,7 +2388,7 @@ exports.unstable_shouldYield=function(){var a=exports.unstable_now();V(a);var b=
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(2);
 var bind = __webpack_require__(14);
 var Axios = __webpack_require__(27);
 var mergeConfig = __webpack_require__(20);
@@ -2448,7 +2448,7 @@ module.exports.default = axios;
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(2);
 var buildURL = __webpack_require__(15);
 var InterceptorManager = __webpack_require__(28);
 var dispatchRequest = __webpack_require__(29);
@@ -2550,7 +2550,7 @@ module.exports = Axios;
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(2);
 
 function InterceptorManager() {
   this.handlers = [];
@@ -2609,7 +2609,7 @@ module.exports = InterceptorManager;
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(2);
 var transformData = __webpack_require__(30);
 var isCancel = __webpack_require__(16);
 var defaults = __webpack_require__(17);
@@ -2695,7 +2695,7 @@ module.exports = function dispatchRequest(config) {
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(2);
 
 /**
  * Transform the data for a request or a response
@@ -2912,7 +2912,7 @@ process.umask = function() { return 0; };
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(2);
 
 module.exports = function normalizeHeaderName(headers, normalizedName) {
   utils.forEach(headers, function processHeader(value, name) {
@@ -3012,7 +3012,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(2);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -3141,7 +3141,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(2);
 
 // Headers whose duplicates are ignored by node
 // c.f. https://nodejs.org/api/http.html#http_message_headers
@@ -3201,7 +3201,7 @@ module.exports = function parseHeaders(headers) {
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(2);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -3412,15 +3412,15 @@ var react_dom = __webpack_require__(6);
 var react_dom_default = /*#__PURE__*/__webpack_require__.n(react_dom);
 
 // EXTERNAL MODULE: ./node_modules/axios/index.js
-var axios = __webpack_require__(5);
+var axios = __webpack_require__(3);
 var axios_default = /*#__PURE__*/__webpack_require__.n(axios);
 
 // EXTERNAL MODULE: ./client/connection.js
-var connection = __webpack_require__(2);
+var connection = __webpack_require__(1);
 var connection_default = /*#__PURE__*/__webpack_require__.n(connection);
 
 // EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
-var injectStylesIntoStyleTag = __webpack_require__(3);
+var injectStylesIntoStyleTag = __webpack_require__(4);
 var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
 
 // EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js!./client/css/app.module.css
@@ -3630,6 +3630,10 @@ var template_literals_TemplateStyles = function TemplateStyles() {
     background: "".concat(tiles, " 0 0")
   };
   Object.assign(this.emptySpaceStyle, globalTileStyle);
+  this.stairsStyle = {
+    background: "".concat(tiles, " -").concat(tileSize, "px -").concat(tileSize * 2, "px")
+  };
+  Object.assign(this.stairsStyle, globalTileStyle);
   this.hintStyleHidden = {
     display: 'none',
     position: 'relative',
@@ -3720,8 +3724,7 @@ function Block(props) {
     }
 
     if (id !== null) {
-      ; // where the item is
-
+      // where the item is
       if (props.path.length > 0) {
         var itemBlock = props.path[props.path.length - 1];
 
@@ -3752,7 +3755,16 @@ function Block(props) {
           style: tempLitStyles.walkablePathStyle
         });
       } else {
-        // regular empty space
+        // stairs
+        for (var _i2 = 0; _i2 < props.stairs.length; _i2++) {
+          if (props.currentFloor === props.stairs[_i2].on_lvl && props.x === props.stairs[_i2].x && props.y === props.stairs[_i2].y) {
+            return /*#__PURE__*/react_default.a.createElement("div", {
+              style: tempLitStyles.stairsStyle
+            });
+          }
+        } // regular empty space
+
+
         return /*#__PURE__*/react_default.a.createElement("div", {
           style: tempLitStyles.emptySpaceStyle
         });
@@ -4109,7 +4121,8 @@ function Map(props) {
           youreHere: props.youreHere,
           path: path,
           setHint: changeHint,
-          currentFloor: currentFloor
+          currentFloor: currentFloor,
+          stairs: props.stairs
         });
         rowChildren.push(block);
       }
@@ -4286,6 +4299,11 @@ function App() {
       items = _useState10[0],
       setItems = _useState10[1];
 
+  var _useState11 = Object(react["useState"])([]),
+      _useState12 = App_slicedToArray(_useState11, 2),
+      stairs = _useState12[0],
+      setStairs = _useState12[1];
+
   function getItems() {
     axios_default.a.get("".concat(connection_default.a.path, "/api/location/").concat(location.id, "/items")).then(function (res) {
       // get id by coordinates
@@ -4299,6 +4317,20 @@ function App() {
     })["catch"](function (err) {
       console.log(err);
     });
+  }
+
+  function getStairs() {
+    axios_default.a.get("".concat(connection_default.a.path, "/api/stairs/").concat(location.id)).then(function (res) {
+      if (res.data.length > 0) {
+        return res.data;
+      } else {
+        throw 'No data';
+      }
+    }).then(function (stairs) {
+      console.log('stairs: ', stairs);
+      setStairs(stairs);
+      return;
+    })["catch"](function (err) {});
   }
 
   function addChosenItem(item_id) {
@@ -4385,7 +4417,8 @@ function App() {
           changePage: changePage,
           chosenItems: chosenItems,
           setYoureHere: setYoureHere,
-          youreHere: youreHere
+          youreHere: youreHere,
+          stairs: stairs
         });
         break;
 
@@ -4398,6 +4431,7 @@ function App() {
   Object(react["useEffect"])(function () {
     getLocation();
     getItems();
+    getStairs();
   }, []);
   return /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("h1", null, location.loc_name), /*#__PURE__*/react_default.a.createElement("div", {
     className: css_app_module.app
