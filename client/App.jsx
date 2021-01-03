@@ -37,7 +37,6 @@ function App() {
         throw 'No data';
       }
     }).then((stairs) => {
-      console.log('stairs: ', stairs);
       setStairs(stairs);
       return;
     }).catch(err => {});
