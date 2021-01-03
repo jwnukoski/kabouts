@@ -6,13 +6,36 @@ import conn from '../connection.js';
 import Block from './Block.jsx';
 import PathList from './PathList.jsx';
 import Hint from './Hint.jsx';
-
+import FloorChanger from './FloorChanger.jsx';
 
 function Map(props) {
   const [path, setPath] = useState([]);
   const [currentItem, setCurrentItem] = useState(-1);
   const [hint, setHint] = useState({x: 0, y: 0, msg: '', visible: false});
   const [binaryMap, setBinaryMap] = useState([]);
+  const [currentFloor, setFloor] = useState(0);
+  const [topFloor, setTopFloor] = useState(0);
+
+  function changeFloor(up = true) {
+    if ((currentFloor < topFloor && up) || (currentFloor > 0 && !up)) {
+      let floor = currentFloor;
+
+      if (up) {
+        floor++;
+      } else {
+        floor--;
+      }
+
+      getBinaryMap(floor, () => {
+        createMap(floor, () => {
+          setFloor(floor);
+        });
+      });
+
+      return true;
+    }
+    return false;
+  }
 
   function nextItem() {
     // goes to next item on the list and finds its path
@@ -67,7 +90,7 @@ function Map(props) {
     return result;
   }
 
-  function createMap() {
+  function createMap(floor = currentFloor, callback = (() => {})) {
     // returns visual blocks
     const mapX = props.location.size_x;
     const mapY = props.location.size_y;
@@ -77,17 +100,18 @@ function Map(props) {
       const rowChildren = [];
 
       for (let x = 0; x < mapX; x++) {
-        const block = (<Block x={x} y={y} location={props.location} youreHere={props.youreHere} path={path} setHint={changeHint}/>);
+        const block = (<Block x={x} y={y} location={props.location} youreHere={props.youreHere} path={path} setHint={changeHint} currentFloor={currentFloor} stairs={props.stairs}/>);
         rowChildren.push(block);
       }
 
       map.push(<div className={styles.mapRow}>{rowChildren}</div>);
     }
 
+    callback();
     return map;
   }
 
-  function getBinaryMap() {
+  function getBinaryMap(floor = currentFloor, callback = (()=>{})) {
     // for astar path finding
     let newBinaryMap = [];
     const mapX = props.location.size_x;
@@ -101,8 +125,7 @@ function Map(props) {
       newBinaryMap[y] = row;
     }
 
-
-    axios.get(`${conn.path}/api/blocks/${props.location.id}`).then((res) => {
+    axios.get(`${conn.path}/api/blocks/level/${props.location.id}/${floor}`).then((res) => {
       // get id by coordinates
       if (res.data.length > 0) {
         return res.data;
@@ -122,6 +145,7 @@ function Map(props) {
 
       return;
     }).then(() => {
+      callback();
       setBinaryMap(new Graph(newBinaryMap));
     }).catch(err => {});
   }
@@ -143,7 +167,20 @@ function Map(props) {
     }
   }
 
+  function getTopFloor() {
+    axios.get(`${conn.path}/api/location/${props.location.id}/lvls`).then((res) => {
+      if (res.data.length > 0) {
+        return res.data;
+      } else {
+        throw 'No data';
+      }
+    }).then((topFloor) => {
+      setTopFloor(topFloor[0].lvl);
+    }).catch(err => {});
+  }
+
   useEffect(() => {
+    getTopFloor();
     getBinaryMap();
   }, []);
 
@@ -153,7 +190,8 @@ function Map(props) {
       <div className={styles.map}>
         {createMap()}
       </div>
-      <PathList chosenItems={props.chosenItems} currentItem={currentItem} nextItem={nextItem} changePage={props.changePage}/>
+      <PathList chosenItems={props.chosenItems} currentItem={currentItem} nextItem={nextItem} changePage={props.changePage} changeFloor={changeFloor}/>
+      <FloorChanger changeFloor={changeFloor} currentFloor={currentFloor}/>
     </div>
   );
 }

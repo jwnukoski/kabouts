@@ -20,8 +20,8 @@ module.exports.getItems = function getItems(loc_id, callback) {
   });
 }
 
-module.exports.getLocBlocks = function getLocBlocks(loc_id, callback) {
-  conn.dbConn.query('SELECT * FROM blocks where loc_id = ?', [loc_id], (err, res) => {
+module.exports.getLocBlocks = function getLocBlocks(loc_id, lvl, callback) {
+  conn.dbConn.query('SELECT * FROM blocks WHERE loc_id = ? AND lvl = ?', [loc_id, lvl], (err, res) => {
     if (err) {
       callback(err, null);
     } else {
@@ -31,7 +31,7 @@ module.exports.getLocBlocks = function getLocBlocks(loc_id, callback) {
 }
 
 module.exports.getItemsByBlock = function getItemsByBlock(block_id, callback) {
-  conn.dbConn.query('SELECT * FROM items where block_id = ?', [block_id], (err, res) => {
+  conn.dbConn.query('SELECT * FROM items WHERE block_id = ?', [block_id], (err, res) => {
     if (err) {
       callback(err, null);
     } else {
@@ -40,8 +40,8 @@ module.exports.getItemsByBlock = function getItemsByBlock(block_id, callback) {
   });
 }
 
-module.exports.getBlockIdByCoordinates = function getBlockIdByCoordinates(loc_id, x, y, callback) {
-  conn.dbConn.query('SELECT id FROM blocks WHERE loc_id = ? AND x = ? AND y = ?', [loc_id, x, y], (err, res) => {
+module.exports.getBlockIdByCoordinates = function getBlockIdByCoordinates(loc_id, x, y, level, callback) {
+  conn.dbConn.query('SELECT id FROM blocks WHERE loc_id = ? AND x = ? AND y = ? AND lvl = ?', [loc_id, x, y, level], (err, res) => {
     if (err) {
       callback(err, null);
     } else {
@@ -49,3 +49,25 @@ module.exports.getBlockIdByCoordinates = function getBlockIdByCoordinates(loc_id
     }
   });
 }
+
+module.exports.getLevelCount = function getLevelCount(loc_id, callback) {
+  conn.dbConn.query('SELECT lvl FROM blocks WHERE loc_id = ? ORDER BY lvl DESC LIMIT 1', [loc_id], (err, res) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, res);
+    }
+  });
+}
+
+module.exports.getStairs = function getStairs(loc_id, callback) {
+  conn.dbConn.query('SELECT on_lvl, to_lvl, x, y FROM stairs WHERE loc_id = ?', [loc_id], (err, res) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, res);
+    }
+  });
+}
+
+

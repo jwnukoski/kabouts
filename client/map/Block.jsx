@@ -9,7 +9,7 @@ function Block(props) {
   const tempLitStyles = new TemplateStyles();
 
   function getBlockData() {
-    axios.get(`${conn.path}/api/blocks/${props.location.id}/${props.x}/${props.y}`).then((res) => {
+    axios.get(`${conn.path}/api/blocks/${props.location.id}/${props.x}/${props.y}/${props.currentFloor}`).then((res) => {
       // get id by coordinates
       if (res.data.length > 0) {
         return res.data[0].id;
@@ -20,14 +20,17 @@ function Block(props) {
       setId(blockId);
 
       // get items by id
-      return axios.get(`${conn.path}/api/blocks/${blockId}/items`);
+      return axios.get(`${conn.path}/api/blocks/items/${blockId}`);
     }).then((items) => {
       if (items.data.length > 0) {
         setItems(items.data);
       } else {
         throw 'No items';
       }
-    }).catch(err => {});
+    }).catch(err => {
+      setId(null);
+      setItems([]);
+    });
   }
 
   function getVisualBlock() {
@@ -40,7 +43,7 @@ function Block(props) {
       }
     }
 
-    if (id !== null) {;
+    if (id !== null) {
       // where the item is
         if (props.path.length > 0) {
           const itemBlock = props.path[props.path.length - 1];
@@ -59,6 +62,13 @@ function Block(props) {
         // walkable path
         return (<div style={tempLitStyles.walkablePathStyle}></div>);
       } else {
+        // stairs
+        for (let i = 0; i < props.stairs.length; i++) {
+          if (props.currentFloor === props.stairs[i].on_lvl && (props.x === props.stairs[i].x && props.y === props.stairs[i].y)) {
+            return (<div style={tempLitStyles.stairsStyle}></div>)
+          }
+        }
+
         // regular empty space
         return (<div style={tempLitStyles.emptySpaceStyle}></div>);
       }
@@ -86,7 +96,7 @@ function Block(props) {
 
   useEffect(() => {
     getBlockData();
-  }, []);
+  }, [props.currentFloor]);
 
   return (
     <div style={tempLitStyles.mapBlock}>

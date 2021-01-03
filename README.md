@@ -8,6 +8,21 @@ npm run server
 ### SQL Schema
 mariadb -u root < schema_mariadb.sql
 
+### Permissions
+If you're having issues in a dev environment connecting to mariadb, you may need to run similar commands like:
+```sh
+sudo mariadb -u root
+SET old_passwords=0;
+CREATE USER 'account'@'localhost' IDENTIFIED BY 'password';
+ALTER USER 'account'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL on *.* to account;
+FLUSH PRIVILEGES;
+```
+You may also need to run:
+```sh
+SET PASSWORD FOR 'account'@'localhost' = PASSWORD('password');
+```
+
 #### Sample Data:
 mysql kabouts < example_data.sql
 

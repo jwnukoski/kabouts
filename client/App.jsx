@@ -12,6 +12,7 @@ function App() {
   const [page, setPage] = useState(0);
   const [chosenItems, setChosenItems] = useState([]);
   const [items, setItems] = useState([]);
+  const [stairs, setStairs] = useState([]);
 
   function getItems() {
     axios.get(`${conn.path}/api/location/${location.id}/items`).then((res) => {
@@ -26,6 +27,19 @@ function App() {
     }).catch(err => {
       console.log(err);
     });
+  }
+
+  function getStairs() {
+    axios.get(`${conn.path}/api/stairs/${location.id}`).then((res) => {
+      if (res.data.length > 0) {
+        return res.data;
+      } else {
+        throw 'No data';
+      }
+    }).then((stairs) => {
+      setStairs(stairs);
+      return;
+    }).catch(err => {});
   }
 
   function addChosenItem (item_id) {
@@ -71,6 +85,7 @@ function App() {
 
   function getLocation() {
     axios.get(`${conn.path}/api/location/${location.id}`).then((res) => {
+      setYoureHere({x: res.data[0].start_x, y: res.data[0].start_y});
       setLocation(res.data[0]);
     }).catch(err => {
       console.log(err);
@@ -91,7 +106,7 @@ function App() {
         return (<List location={location} changePage={changePage} addChosenItem={addChosenItem} removeChosenItem={removeChosenItem} chosenItems={chosenItems} items={items}/>);
       break;
       case 1:
-        return (<Map location={location} changePage={changePage} chosenItems={chosenItems} setYoureHere={setYoureHere} youreHere={youreHere}/>);
+        return (<Map location={location} changePage={changePage} chosenItems={chosenItems} setYoureHere={setYoureHere} youreHere={youreHere} stairs={stairs}/>);
       break;
       default:
         return (<div></div>);
@@ -102,6 +117,7 @@ function App() {
   useEffect(() => {
     getLocation();
     getItems();
+    getStairs();
   }, []);
 
   return (

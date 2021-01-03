@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 43);
+/******/ 	return __webpack_require__(__webpack_require__.s = 44);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -92,18 +92,31 @@
 
 
 if (true) {
-  module.exports = __webpack_require__(21);
+  module.exports = __webpack_require__(22);
 } else {}
 
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports) {
+
+var port = 3000;
+var host = '127.0.0.1';
+var path = "http://".concat(host, ":").concat(port);
+module.exports = {
+  port: port,
+  host: host,
+  path: path
+};
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var bind = __webpack_require__(13);
+var bind = __webpack_require__(14);
 
 /*global toString:true*/
 
@@ -455,23 +468,10 @@ module.exports = {
 
 
 /***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-var port = 3000;
-var host = '127.0.0.1';
-var path = "http://".concat(host, ":").concat(port);
-module.exports = {
-  port: port,
-  host: host,
-  path: path
-};
-
-/***/ }),
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(25);
+module.exports = __webpack_require__(26);
 
 /***/ }),
 /* 4 */
@@ -850,7 +850,7 @@ if (true) {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(22);
+  module.exports = __webpack_require__(23);
 } else {}
 
 
@@ -1308,7 +1308,7 @@ ___CSS_LOADER_EXPORT___.locals = {
     Graph: Graph
   };
 });
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(42)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(43)(module)))
 
 /***/ }),
 /* 10 */
@@ -1352,6 +1352,25 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 /***/ }),
 /* 12 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, "._10elkKOUegYlsC9vuucWlU {\n  margin-top: 4em;\n  width: 100%;\n  text-align: center;\n}\n\n._10elkKOUegYlsC9vuucWlU button {\n  border: 0;\n  border-radius: 4px;\n  font-weight: bold;\n  padding: 1em;\n  background-color: #2CC185;\n  color: white;\n  margin-right: 2em;\n}", ""]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"floorChangerWrapper": "_10elkKOUegYlsC9vuucWlU"
+};
+/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1448,7 +1467,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1466,13 +1485,13 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(2);
 
 function encode(val) {
   return encodeURIComponent(val).
@@ -1543,7 +1562,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1555,14 +1574,14 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-var utils = __webpack_require__(1);
-var normalizeHeaderName = __webpack_require__(31);
+var utils = __webpack_require__(2);
+var normalizeHeaderName = __webpack_require__(32);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -1578,10 +1597,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(17);
+    adapter = __webpack_require__(18);
   } else if (typeof process !== 'undefined' && Object.prototype.toString.call(process) === '[object process]') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(17);
+    adapter = __webpack_require__(18);
   }
   return adapter;
 }
@@ -1658,23 +1677,23 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(30)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(31)))
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(1);
-var settle = __webpack_require__(32);
-var cookies = __webpack_require__(34);
-var buildURL = __webpack_require__(14);
-var buildFullPath = __webpack_require__(35);
-var parseHeaders = __webpack_require__(38);
-var isURLSameOrigin = __webpack_require__(39);
-var createError = __webpack_require__(18);
+var utils = __webpack_require__(2);
+var settle = __webpack_require__(33);
+var cookies = __webpack_require__(35);
+var buildURL = __webpack_require__(15);
+var buildFullPath = __webpack_require__(36);
+var parseHeaders = __webpack_require__(39);
+var isURLSameOrigin = __webpack_require__(40);
+var createError = __webpack_require__(19);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -1847,13 +1866,13 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var enhanceError = __webpack_require__(33);
+var enhanceError = __webpack_require__(34);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -1872,13 +1891,13 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(2);
 
 /**
  * Config-specific merge-function which creates a new config-object
@@ -1966,7 +1985,7 @@ module.exports = function mergeConfig(config1, config2) {
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1992,7 +2011,7 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2005,7 +2024,7 @@ module.exports = Cancel;
  * LICENSE file in the root directory of this source tree.
  */
 
-var l=__webpack_require__(12),n="function"===typeof Symbol&&Symbol.for,p=n?Symbol.for("react.element"):60103,q=n?Symbol.for("react.portal"):60106,r=n?Symbol.for("react.fragment"):60107,t=n?Symbol.for("react.strict_mode"):60108,u=n?Symbol.for("react.profiler"):60114,v=n?Symbol.for("react.provider"):60109,w=n?Symbol.for("react.context"):60110,x=n?Symbol.for("react.forward_ref"):60112,y=n?Symbol.for("react.suspense"):60113,z=n?Symbol.for("react.memo"):60115,A=n?Symbol.for("react.lazy"):
+var l=__webpack_require__(13),n="function"===typeof Symbol&&Symbol.for,p=n?Symbol.for("react.element"):60103,q=n?Symbol.for("react.portal"):60106,r=n?Symbol.for("react.fragment"):60107,t=n?Symbol.for("react.strict_mode"):60108,u=n?Symbol.for("react.profiler"):60114,v=n?Symbol.for("react.provider"):60109,w=n?Symbol.for("react.context"):60110,x=n?Symbol.for("react.forward_ref"):60112,y=n?Symbol.for("react.suspense"):60113,z=n?Symbol.for("react.memo"):60115,A=n?Symbol.for("react.lazy"):
 60116,B="function"===typeof Symbol&&Symbol.iterator;function C(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}
 var D={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}},E={};function F(a,b,c){this.props=a;this.context=b;this.refs=E;this.updater=c||D}F.prototype.isReactComponent={};F.prototype.setState=function(a,b){if("object"!==typeof a&&"function"!==typeof a&&null!=a)throw Error(C(85));this.updater.enqueueSetState(this,a,b,"setState")};F.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};
 function G(){}G.prototype=F.prototype;function H(a,b,c){this.props=a;this.context=b;this.refs=E;this.updater=c||D}var I=H.prototype=new G;I.constructor=H;l(I,F.prototype);I.isPureReactComponent=!0;var J={current:null},K=Object.prototype.hasOwnProperty,L={key:!0,ref:!0,__self:!0,__source:!0};
@@ -2024,7 +2043,7 @@ exports.useLayoutEffect=function(a,b){return Z().useLayoutEffect(a,b)};exports.u
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2040,7 +2059,7 @@ exports.useLayoutEffect=function(a,b){return Z().useLayoutEffect(a,b)};exports.u
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(0),n=__webpack_require__(12),r=__webpack_require__(23);function u(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}if(!aa)throw Error(u(227));
+var aa=__webpack_require__(0),n=__webpack_require__(13),r=__webpack_require__(24);function u(a){for(var b="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=1;c<arguments.length;c++)b+="&args[]="+encodeURIComponent(arguments[c]);return"Minified React error #"+a+"; visit "+b+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}if(!aa)throw Error(u(227));
 function ba(a,b,c,d,e,f,g,h,k){var l=Array.prototype.slice.call(arguments,3);try{b.apply(c,l)}catch(m){this.onError(m)}}var da=!1,ea=null,fa=!1,ha=null,ia={onError:function(a){da=!0;ea=a}};function ja(a,b,c,d,e,f,g,h,k){da=!1;ea=null;ba.apply(ia,arguments)}function ka(a,b,c,d,e,f,g,h,k){ja.apply(this,arguments);if(da){if(da){var l=ea;da=!1;ea=null}else throw Error(u(198));fa||(fa=!0,ha=l)}}var la=null,ma=null,na=null;
 function oa(a,b,c){var d=a.type||"unknown-event";a.currentTarget=na(c);ka(d,b,void 0,a);a.currentTarget=null}var pa=null,qa={};
 function ra(){if(pa)for(var a in qa){var b=qa[a],c=pa.indexOf(a);if(!(-1<c))throw Error(u(96,a));if(!sa[c]){if(!b.extractEvents)throw Error(u(97,a));sa[c]=b;c=b.eventTypes;for(var d in c){var e=void 0;var f=c[d],g=b,h=d;if(ta.hasOwnProperty(h))throw Error(u(99,h));ta[h]=f;var k=f.phasedRegistrationNames;if(k){for(e in k)k.hasOwnProperty(e)&&ua(k[e],g,h);e=!0}else f.registrationName?(ua(f.registrationName,g,h),e=!0):e=!1;if(!e)throw Error(u(98,d,a));}}}}
@@ -2323,19 +2342,19 @@ exports.unstable_renderSubtreeIntoContainer=function(a,b,c,d){if(!gk(c))throw Er
 
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 if (true) {
-  module.exports = __webpack_require__(24);
+  module.exports = __webpack_require__(25);
 } else {}
 
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2363,17 +2382,17 @@ exports.unstable_shouldYield=function(){var a=exports.unstable_now();V(a);var b=
 
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(1);
-var bind = __webpack_require__(13);
-var Axios = __webpack_require__(26);
-var mergeConfig = __webpack_require__(19);
-var defaults = __webpack_require__(16);
+var utils = __webpack_require__(2);
+var bind = __webpack_require__(14);
+var Axios = __webpack_require__(27);
+var mergeConfig = __webpack_require__(20);
+var defaults = __webpack_require__(17);
 
 /**
  * Create an instance of Axios
@@ -2406,15 +2425,15 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(20);
-axios.CancelToken = __webpack_require__(40);
-axios.isCancel = __webpack_require__(15);
+axios.Cancel = __webpack_require__(21);
+axios.CancelToken = __webpack_require__(41);
+axios.isCancel = __webpack_require__(16);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(41);
+axios.spread = __webpack_require__(42);
 
 module.exports = axios;
 
@@ -2423,17 +2442,17 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(1);
-var buildURL = __webpack_require__(14);
-var InterceptorManager = __webpack_require__(27);
-var dispatchRequest = __webpack_require__(28);
-var mergeConfig = __webpack_require__(19);
+var utils = __webpack_require__(2);
+var buildURL = __webpack_require__(15);
+var InterceptorManager = __webpack_require__(28);
+var dispatchRequest = __webpack_require__(29);
+var mergeConfig = __webpack_require__(20);
 
 /**
  * Create a new instance of Axios
@@ -2525,13 +2544,13 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(2);
 
 function InterceptorManager() {
   this.handlers = [];
@@ -2584,16 +2603,16 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(1);
-var transformData = __webpack_require__(29);
-var isCancel = __webpack_require__(15);
-var defaults = __webpack_require__(16);
+var utils = __webpack_require__(2);
+var transformData = __webpack_require__(30);
+var isCancel = __webpack_require__(16);
+var defaults = __webpack_require__(17);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -2670,13 +2689,13 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(2);
 
 /**
  * Transform the data for a request or a response
@@ -2697,7 +2716,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -2887,13 +2906,13 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(2);
 
 module.exports = function normalizeHeaderName(headers, normalizedName) {
   utils.forEach(headers, function processHeader(value, name) {
@@ -2906,13 +2925,13 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createError = __webpack_require__(18);
+var createError = __webpack_require__(19);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -2938,7 +2957,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2987,13 +3006,13 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(2);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -3047,14 +3066,14 @@ module.exports = (
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var isAbsoluteURL = __webpack_require__(36);
-var combineURLs = __webpack_require__(37);
+var isAbsoluteURL = __webpack_require__(37);
+var combineURLs = __webpack_require__(38);
 
 /**
  * Creates a new URL by combining the baseURL with the requestedURL,
@@ -3074,7 +3093,7 @@ module.exports = function buildFullPath(baseURL, requestedURL) {
 
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3095,7 +3114,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3116,13 +3135,13 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(2);
 
 // Headers whose duplicates are ignored by node
 // c.f. https://nodejs.org/api/http.html#http_message_headers
@@ -3176,13 +3195,13 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(1);
+var utils = __webpack_require__(2);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -3251,13 +3270,13 @@ module.exports = (
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Cancel = __webpack_require__(20);
+var Cancel = __webpack_require__(21);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -3315,7 +3334,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3349,7 +3368,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -3377,7 +3396,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3397,7 +3416,7 @@ var axios = __webpack_require__(3);
 var axios_default = /*#__PURE__*/__webpack_require__.n(axios);
 
 // EXTERNAL MODULE: ./client/connection.js
-var connection = __webpack_require__(2);
+var connection = __webpack_require__(1);
 var connection_default = /*#__PURE__*/__webpack_require__.n(connection);
 
 // EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
@@ -3611,6 +3630,10 @@ var template_literals_TemplateStyles = function TemplateStyles() {
     background: "".concat(tiles, " 0 0")
   };
   Object.assign(this.emptySpaceStyle, globalTileStyle);
+  this.stairsStyle = {
+    background: "".concat(tiles, " -").concat(tileSize, "px -").concat(tileSize * 2, "px")
+  };
+  Object.assign(this.stairsStyle, globalTileStyle);
   this.hintStyleHidden = {
     display: 'none',
     position: 'relative',
@@ -3666,7 +3689,7 @@ function Block(props) {
   var tempLitStyles = new template_literals();
 
   function getBlockData() {
-    axios_default.a.get("".concat(connection_default.a.path, "/api/blocks/").concat(props.location.id, "/").concat(props.x, "/").concat(props.y)).then(function (res) {
+    axios_default.a.get("".concat(connection_default.a.path, "/api/blocks/").concat(props.location.id, "/").concat(props.x, "/").concat(props.y, "/").concat(props.currentFloor)).then(function (res) {
       // get id by coordinates
       if (res.data.length > 0) {
         return res.data[0].id;
@@ -3676,14 +3699,17 @@ function Block(props) {
     }).then(function (blockId) {
       setId(blockId); // get items by id
 
-      return axios_default.a.get("".concat(connection_default.a.path, "/api/blocks/").concat(blockId, "/items"));
+      return axios_default.a.get("".concat(connection_default.a.path, "/api/blocks/items/").concat(blockId));
     }).then(function (items) {
       if (items.data.length > 0) {
         setItems(items.data);
       } else {
         throw 'No items';
       }
-    })["catch"](function (err) {});
+    })["catch"](function (err) {
+      setId(null);
+      setItems([]);
+    });
   }
 
   function getVisualBlock() {
@@ -3698,8 +3724,7 @@ function Block(props) {
     }
 
     if (id !== null) {
-      ; // where the item is
-
+      // where the item is
       if (props.path.length > 0) {
         var itemBlock = props.path[props.path.length - 1];
 
@@ -3730,7 +3755,16 @@ function Block(props) {
           style: tempLitStyles.walkablePathStyle
         });
       } else {
-        // regular empty space
+        // stairs
+        for (var _i2 = 0; _i2 < props.stairs.length; _i2++) {
+          if (props.currentFloor === props.stairs[_i2].on_lvl && props.x === props.stairs[_i2].x && props.y === props.stairs[_i2].y) {
+            return /*#__PURE__*/react_default.a.createElement("div", {
+              style: tempLitStyles.stairsStyle
+            });
+          }
+        } // regular empty space
+
+
         return /*#__PURE__*/react_default.a.createElement("div", {
           style: tempLitStyles.emptySpaceStyle
         });
@@ -3760,7 +3794,7 @@ function Block(props) {
 
   Object(react["useEffect"])(function () {
     getBlockData();
-  }, []);
+  }, [props.currentFloor]);
   return /*#__PURE__*/react_default.a.createElement("div", {
     style: tempLitStyles.mapBlock
   }, getVisualBlock());
@@ -3895,6 +3929,46 @@ function Hint(props) {
 }
 
 /* harmony default export */ var map_Hint = (Hint);
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js!./client/map/css/floorchanger.module.css
+var floorchanger_module = __webpack_require__(12);
+
+// CONCATENATED MODULE: ./client/map/css/floorchanger.module.css
+
+            
+
+var floorchanger_module_options = {};
+
+floorchanger_module_options.insert = "head";
+floorchanger_module_options.singleton = false;
+
+var floorchanger_module_update = injectStylesIntoStyleTag_default()(floorchanger_module["a" /* default */], floorchanger_module_options);
+
+
+
+/* harmony default export */ var css_floorchanger_module = (floorchanger_module["a" /* default */].locals || {});
+// CONCATENATED MODULE: ./client/map/FloorChanger.jsx
+
+
+
+function FloorChanger(props) {
+  function handleUpClick() {
+    props.changeFloor(true);
+  }
+
+  function handleDownClick() {
+    props.changeFloor(false);
+  }
+
+  return /*#__PURE__*/react_default.a.createElement("div", {
+    className: css_floorchanger_module.floorChangerWrapper
+  }, /*#__PURE__*/react_default.a.createElement("p", null, "Current floor: ", props.currentFloor), /*#__PURE__*/react_default.a.createElement("button", {
+    onClick: handleUpClick
+  }, "Up"), /*#__PURE__*/react_default.a.createElement("button", {
+    onClick: handleDownClick
+  }, "Down"));
+}
+
+/* harmony default export */ var map_FloorChanger = (FloorChanger);
 // CONCATENATED MODULE: ./client/map/Map.jsx
 function Map_slicedToArray(arr, i) { return Map_arrayWithHoles(arr) || Map_iterableToArrayLimit(arr, i) || Map_unsupportedIterableToArray(arr, i) || Map_nonIterableRest(); }
 
@@ -3907,6 +3981,7 @@ function Map_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) l
 function Map_iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function Map_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -3942,6 +4017,39 @@ function Map(props) {
       _useState8 = Map_slicedToArray(_useState7, 2),
       binaryMap = _useState8[0],
       setBinaryMap = _useState8[1];
+
+  var _useState9 = Object(react["useState"])(0),
+      _useState10 = Map_slicedToArray(_useState9, 2),
+      currentFloor = _useState10[0],
+      setFloor = _useState10[1];
+
+  var _useState11 = Object(react["useState"])(0),
+      _useState12 = Map_slicedToArray(_useState11, 2),
+      topFloor = _useState12[0],
+      setTopFloor = _useState12[1];
+
+  function changeFloor() {
+    var up = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+
+    if (currentFloor < topFloor && up || currentFloor > 0 && !up) {
+      var floor = currentFloor;
+
+      if (up) {
+        floor++;
+      } else {
+        floor--;
+      }
+
+      getBinaryMap(floor, function () {
+        createMap(floor, function () {
+          setFloor(floor);
+        });
+      });
+      return true;
+    }
+
+    return false;
+  }
 
   function nextItem() {
     // goes to next item on the list and finds its path
@@ -3995,6 +4103,8 @@ function Map(props) {
   }
 
   function createMap() {
+    var floor = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : currentFloor;
+    var callback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : function () {};
     // returns visual blocks
     var mapX = props.location.size_x;
     var mapY = props.location.size_y;
@@ -4010,7 +4120,9 @@ function Map(props) {
           location: props.location,
           youreHere: props.youreHere,
           path: path,
-          setHint: changeHint
+          setHint: changeHint,
+          currentFloor: currentFloor,
+          stairs: props.stairs
         });
         rowChildren.push(block);
       }
@@ -4020,10 +4132,13 @@ function Map(props) {
       }, rowChildren));
     }
 
+    callback();
     return map;
   }
 
   function getBinaryMap() {
+    var floor = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : currentFloor;
+    var callback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : function () {};
     // for astar path finding
     var newBinaryMap = [];
     var mapX = props.location.size_x;
@@ -4039,7 +4154,7 @@ function Map(props) {
       newBinaryMap[y] = row;
     }
 
-    axios_default.a.get("".concat(connection_default.a.path, "/api/blocks/").concat(props.location.id)).then(function (res) {
+    axios_default.a.get("".concat(connection_default.a.path, "/api/blocks/level/").concat(props.location.id, "/").concat(floor)).then(function (res) {
       // get id by coordinates
       if (res.data.length > 0) {
         return res.data;
@@ -4059,6 +4174,7 @@ function Map(props) {
 
       return;
     }).then(function () {
+      callback();
       setBinaryMap(new astar["Graph"](newBinaryMap));
     })["catch"](function (err) {});
   }
@@ -4087,7 +4203,20 @@ function Map(props) {
     }
   }
 
+  function getTopFloor() {
+    axios_default.a.get("".concat(connection_default.a.path, "/api/location/").concat(props.location.id, "/lvls")).then(function (res) {
+      if (res.data.length > 0) {
+        return res.data;
+      } else {
+        throw 'No data';
+      }
+    }).then(function (topFloor) {
+      setTopFloor(topFloor[0].lvl);
+    })["catch"](function (err) {});
+  }
+
   Object(react["useEffect"])(function () {
+    getTopFloor();
     getBinaryMap();
   }, []);
   return /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement(map_Hint, {
@@ -4098,7 +4227,11 @@ function Map(props) {
     chosenItems: props.chosenItems,
     currentItem: currentItem,
     nextItem: nextItem,
-    changePage: props.changePage
+    changePage: props.changePage,
+    changeFloor: changeFloor
+  }), /*#__PURE__*/react_default.a.createElement(map_FloorChanger, {
+    changeFloor: changeFloor,
+    currentFloor: currentFloor
   }));
 }
 
@@ -4166,6 +4299,11 @@ function App() {
       items = _useState10[0],
       setItems = _useState10[1];
 
+  var _useState11 = Object(react["useState"])([]),
+      _useState12 = App_slicedToArray(_useState11, 2),
+      stairs = _useState12[0],
+      setStairs = _useState12[1];
+
   function getItems() {
     axios_default.a.get("".concat(connection_default.a.path, "/api/location/").concat(location.id, "/items")).then(function (res) {
       // get id by coordinates
@@ -4179,6 +4317,20 @@ function App() {
     })["catch"](function (err) {
       console.log(err);
     });
+  }
+
+  function getStairs() {
+    axios_default.a.get("".concat(connection_default.a.path, "/api/stairs/").concat(location.id)).then(function (res) {
+      if (res.data.length > 0) {
+        return res.data;
+      } else {
+        throw 'No data';
+      }
+    }).then(function (stairs) {
+      console.log('stairs: ', stairs);
+      setStairs(stairs);
+      return;
+    })["catch"](function (err) {});
   }
 
   function addChosenItem(item_id) {
@@ -4225,6 +4377,10 @@ function App() {
 
   function getLocation() {
     axios_default.a.get("".concat(connection_default.a.path, "/api/location/").concat(location.id)).then(function (res) {
+      setYoureHere({
+        x: res.data[0].start_x,
+        y: res.data[0].start_y
+      });
       setLocation(res.data[0]);
     })["catch"](function (err) {
       console.log(err);
@@ -4261,7 +4417,8 @@ function App() {
           changePage: changePage,
           chosenItems: chosenItems,
           setYoureHere: setYoureHere,
-          youreHere: youreHere
+          youreHere: youreHere,
+          stairs: stairs
         });
         break;
 
@@ -4274,6 +4431,7 @@ function App() {
   Object(react["useEffect"])(function () {
     getLocation();
     getItems();
+    getStairs();
   }, []);
   return /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("h1", null, location.loc_name), /*#__PURE__*/react_default.a.createElement("div", {
     className: css_app_module.app
