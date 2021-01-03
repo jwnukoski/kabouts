@@ -1361,7 +1361,7 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, "._10elkKOUegYlsC9vuucWlU {\n\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, "._10elkKOUegYlsC9vuucWlU {\n  margin-top: 4em;\n  width: 100%;\n  text-align: center;\n}\n\n._10elkKOUegYlsC9vuucWlU button {\n  border: 0;\n  border-radius: 4px;\n  font-weight: bold;\n  padding: 1em;\n  background-color: #2CC185;\n  color: white;\n  margin-right: 2em;\n}", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"floorChangerWrapper": "_10elkKOUegYlsC9vuucWlU"
@@ -4217,7 +4217,8 @@ function Map(props) {
     changePage: props.changePage,
     changeFloor: changeFloor
   }), /*#__PURE__*/react_default.a.createElement(map_FloorChanger, {
-    changeFloor: changeFloor
+    changeFloor: changeFloor,
+    currentFloor: currentFloor
   }));
 }
 

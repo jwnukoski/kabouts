@@ -191,7 +191,7 @@ function Map(props) {
         {createMap()}
       </div>
       <PathList chosenItems={props.chosenItems} currentItem={currentItem} nextItem={nextItem} changePage={props.changePage} changeFloor={changeFloor}/>
-      <FloorChanger changeFloor={changeFloor}/>
+      <FloorChanger changeFloor={changeFloor} currentFloor={currentFloor}/>
     </div>
   );
 }
