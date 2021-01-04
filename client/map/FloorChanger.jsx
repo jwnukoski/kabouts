@@ -1,13 +1,14 @@
-import React from 'react';
-import styles from './css/floorchanger.module.css';
+import PropTypes from 'prop-types'
+import React from 'react'
+import styles from './css/floorchanger.module.css'
 
-function FloorChanger(props) {
-  function handleUpClick() {
-    props.changeFloor(true);
+function FloorChanger (props) {
+  function handleUpClick () {
+    props.changeFloor(true)
   }
 
-  function handleDownClick() {
-    props.changeFloor(false);
+  function handleDownClick () {
+    props.changeFloor(false)
   }
 
   return (
@@ -16,7 +17,12 @@ function FloorChanger(props) {
       <button onClick={handleUpClick}>Up</button>
       <button onClick={handleDownClick}>Down</button>
     </div>
-  );
+  )
 }
 
-export default FloorChanger;
+FloorChanger.propTypes = {
+  changeFloor: PropTypes.func,
+  currentFloor: PropTypes.number
+}
+
+export default FloorChanger

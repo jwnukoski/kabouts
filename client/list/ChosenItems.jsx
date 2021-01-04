@@ -1,17 +1,18 @@
-import React from 'react';
-import ChosenItem from './ChosenItem.jsx';
-import styles from './css/list.module.css';
+import PropTypes from 'prop-types'
+import React from 'react'
+import ChosenItem from './ChosenItem.jsx'
+import styles from './css/list.module.css'
 
-function ChosenItems(props) {
-  function getHeader() {
-    let header = (<span></span>);
+function ChosenItems (props) {
+  function getHeader () {
+    let header = (<span></span>)
     if (props.chosenItems.length > 0) {
-      header = (<h2>Chosen Items</h2>);
+      header = (<h2>Chosen Items</h2>)
     }
-    return header;
+    return header
   }
 
- return (
+  return (
       <div className={styles.chosenItems}>
         {getHeader()}
         <ul>
@@ -22,7 +23,12 @@ function ChosenItems(props) {
           }
         </ul>
       </div>
-  );
+  )
 }
 
-export default ChosenItems;
+ChosenItems.propTypes = {
+  chosenItems: PropTypes.array,
+  removeChosenItem: PropTypes.object
+}
+
+export default ChosenItems
