@@ -26,6 +26,15 @@ function Map(props) {
         floor--;
       }
 
+      // TODO
+      // just assume to put on the stairs at this point
+      for (let i = 0; i < props.stairs.length; i++) {
+        if (props.stairs[i].on_lvl === floor) {
+          props.setYoureHere({x: props.stairs[i].x, y: props.stairs[i].y});
+          break;
+        }
+      }
+
       getBinaryMap(floor, () => {
         createMap(floor, () => {
           setFloor(floor);
@@ -54,7 +63,7 @@ function Map(props) {
       const newX = lastGrid.x;
       const newY = lastGrid.y;
 
-      const newPath = getPath(newX, newY, props.chosenItems[currItem].x, props.chosenItems[currItem].y);
+      const newPath = getPath(newX, newY, props.chosenItems[currItem].x, props.chosenItems[currItem].y, props.chosenItems[currItem].lvl);
 
       props.setYoureHere({x: newX, y: newY});
       setCurrentItem(currItem);
@@ -62,7 +71,7 @@ function Map(props) {
     }
   }
 
-  function getPath(startX, startY, targetX, targetY) {
+  function getPath(startX, startY, targetX, targetY, lvl = 0) {
     // finds and returns grid elements to location
     const graph = binaryMap;
     const start = graph.grid[startX][startY];
@@ -82,10 +91,49 @@ function Map(props) {
     }
 
     const end = graph.grid[targetX][targetY];
-    const result = astar.search(graph, start, end);
+    let result = [];
 
-    // add the original item location for highlighting later
-    result.push(itemBlock);
+    if (currentFloor !== lvl) {
+      // item is on a different floor
+      let stairs;
+
+      for (let i = 0; i < props.stairs.length; i++) {
+        // not concerned about the closest one, just pick one for now
+        if (props.stairs[i].on_lvl === currentFloor && props.stairs[i].to_lvl === lvl) {
+          stairs = props.stairs[i];
+          break;
+        }
+      }
+
+      // currently only accounting for 2 floors
+      const stairGrid = graph.grid[stairs.x][stairs.y];
+      const pathToStairs = astar.search(graph, start, stairGrid);
+      pathToStairs.forEach(node => {
+        node.lvl = currentFloor;
+      });
+
+      const pathFromStairsToItem = astar.search(graph, stairGrid, end);
+      pathFromStairsToItem.forEach(node => {
+        node.lvl = lvl;
+      });
+      result = pathToStairs.concat(pathFromStairsToItem);
+
+      // add the original item location for highlighting later
+      result.push(itemBlock);
+      result[result.length - 1].lvl = lvl;
+    } else {
+      // item on same floor
+      result = astar.search(graph, start, end);
+
+      // add the original item location for highlighting later
+      result.push(itemBlock);
+
+      result.forEach(node => {
+        node.lvl = currentFloor;
+      });
+    }
+
+    console.log(result);
 
     return result;
   }
