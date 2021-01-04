@@ -11,7 +11,7 @@ module.exports.getLocInfo = function getLocInfo(loc_id, callback) {
 }
 
 module.exports.getItems = function getItems(loc_id, callback) {
-  conn.dbConn.query('SELECT i.id,i.info, i.photo, b.id AS block_id, b.x, b.y FROM locations l LEFT JOIN blocks b ON b.loc_id = ? LEFT JOIN items i ON i.block_id = b.id', [loc_id], (err, res) => {
+  conn.dbConn.query('SELECT i.id,i.info, i.photo, b.id AS block_id, b.x, b.y, b.lvl FROM locations l LEFT JOIN blocks b ON b.loc_id = ? LEFT JOIN items i ON i.block_id = b.id', [loc_id], (err, res) => {
     if (err) {
       callback(err, null);
     } else {

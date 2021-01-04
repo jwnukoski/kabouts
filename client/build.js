@@ -3717,7 +3717,7 @@ function Block(props) {
     var isPath = false;
 
     for (var i = 0; i < props.path.length; i++) {
-      if (props.path[i].x === props.x && props.path[i].y === props.y) {
+      if (props.path[i].x === props.x && props.path[i].y === props.y && props.path[i].lvl === props.currentFloor) {
         isPath = true;
         break;
       }
@@ -3728,7 +3728,7 @@ function Block(props) {
       if (props.path.length > 0) {
         var itemBlock = props.path[props.path.length - 1];
 
-        if (itemBlock.x === props.x && itemBlock.y === props.y) {
+        if (itemBlock.x === props.x && itemBlock.y === props.y && props.currentFloor === itemBlock.lvl) {
           return /*#__PURE__*/react_default.a.createElement("div", {
             style: tempLitStyles.itemHereStyle,
             onMouseEnter: mouseOver,
@@ -4038,6 +4038,18 @@ function Map(props) {
         floor++;
       } else {
         floor--;
+      } // TODO
+      // just assume to put on the stairs at this point
+
+
+      for (var i = 0; i < props.stairs.length; i++) {
+        if (props.stairs[i].on_lvl === floor) {
+          props.setYoureHere({
+            x: props.stairs[i].x,
+            y: props.stairs[i].y
+          });
+          break;
+        }
       }
 
       getBinaryMap(floor, function () {
@@ -4067,7 +4079,7 @@ function Map(props) {
 
       var newX = lastGrid.x;
       var newY = lastGrid.y;
-      var newPath = getPath(newX, newY, props.chosenItems[currItem].x, props.chosenItems[currItem].y);
+      var newPath = getPath(newX, newY, props.chosenItems[currItem].x, props.chosenItems[currItem].y, props.chosenItems[currItem].lvl);
       props.setYoureHere({
         x: newX,
         y: newY
@@ -4078,6 +4090,7 @@ function Map(props) {
   }
 
   function getPath(startX, startY, targetX, targetY) {
+    var lvl = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 0;
     // finds and returns grid elements to location
     var graph = binaryMap;
     var start = graph.grid[startX][startY];
@@ -4096,9 +4109,45 @@ function Map(props) {
     }
 
     var end = graph.grid[targetX][targetY];
-    var result = astar["astar"].search(graph, start, end); // add the original item location for highlighting later
+    var result = [];
 
-    result.push(itemBlock);
+    if (currentFloor !== lvl) {
+      // item is on a different floor
+      var stairs;
+
+      for (var i = 0; i < props.stairs.length; i++) {
+        // not concerned about the closest one, just pick one for now
+        if (props.stairs[i].on_lvl === currentFloor && props.stairs[i].to_lvl === lvl) {
+          stairs = props.stairs[i];
+          break;
+        }
+      } // currently only accounting for 2 floors
+
+
+      var stairGrid = graph.grid[stairs.x][stairs.y];
+      var pathToStairs = astar["astar"].search(graph, start, stairGrid);
+      pathToStairs.forEach(function (node) {
+        node.lvl = currentFloor;
+      });
+      var pathFromStairsToItem = astar["astar"].search(graph, stairGrid, end);
+      pathFromStairsToItem.forEach(function (node) {
+        node.lvl = lvl;
+      });
+      result = pathToStairs.concat(pathFromStairsToItem); // add the original item location for highlighting later
+
+      result.push(itemBlock);
+      result[result.length - 1].lvl = lvl;
+    } else {
+      // item on same floor
+      result = astar["astar"].search(graph, start, end); // add the original item location for highlighting later
+
+      result.push(itemBlock);
+      result.forEach(function (node) {
+        node.lvl = currentFloor;
+      });
+    }
+
+    console.log(result);
     return result;
   }
 
@@ -4327,7 +4376,6 @@ function App() {
         throw 'No data';
       }
     }).then(function (stairs) {
-      console.log('stairs: ', stairs);
       setStairs(stairs);
       return;
     })["catch"](function (err) {});

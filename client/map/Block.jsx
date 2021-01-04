@@ -37,7 +37,7 @@ function Block(props) {
     // check if this should be highlighted
     let isPath = false;
     for (let i = 0; i < props.path.length; i++) {
-      if (props.path[i].x === props.x && props.path[i].y === props.y) {
+      if (props.path[i].x === props.x && props.path[i].y === props.y && props.path[i].lvl === props.currentFloor) {
         isPath = true;
         break;
       }
@@ -47,7 +47,7 @@ function Block(props) {
       // where the item is
         if (props.path.length > 0) {
           const itemBlock = props.path[props.path.length - 1];
-          if (itemBlock.x === props.x && itemBlock.y === props.y) {
+          if (itemBlock.x === props.x && itemBlock.y === props.y && props.currentFloor === itemBlock.lvl) {
             return (<div style={tempLitStyles.itemHereStyle} onMouseEnter={mouseOver} onMouseLeave={mouseOut}></div>);
           }
         }
