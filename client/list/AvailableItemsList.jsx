@@ -1,11 +1,12 @@
-import React from 'react';
-import styles from './css/list.module.css';
+import PropTypes from 'prop-types'
+import React from 'react'
+import styles from './css/list.module.css'
 
-function AvailableItemsList(props) {
+function AvailableItemsList (props) {
   const handleSubmit = () => {
-    const item_id = Number(document.getElementById('items').value);
-    props.addChosenItem(item_id);
-  };
+    const itemId = Number(document.getElementById('items').value)
+    props.addChosenItem(itemId)
+  }
 
   return (
     <div className={styles.availableItemsList}>
@@ -14,12 +15,17 @@ function AvailableItemsList(props) {
       <select id="items">
         {
           props.items.map((item, index) => {
-            return <option value={item.id} key={index}>{item.info}</option>;
+            return <option value={item.id} key={index}>{item.info}</option>
           })
         }
       </select>
     </div>
-  );
+  )
 }
 
-export default AvailableItemsList;
+AvailableItemsList.propTypes = {
+  addChosenItem: PropTypes.func,
+  items: PropTypes.array
+}
+
+export default AvailableItemsList
