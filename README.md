@@ -1,5 +1,6 @@
 # kabouts
-Kiosk Whereabouts
+Kiosk Whereabouts  
+![Preview of Kabouts](https://i.imgur.com/g9oGQq5.gif "Kabouts Demo")  
 
 ## Server
 ### Running
@@ -15,7 +16,7 @@ sudo mariadb -u root
 SET old_passwords=0;
 CREATE USER 'account'@'localhost' IDENTIFIED BY 'password';
 ALTER USER 'account'@'localhost' IDENTIFIED BY 'password';
-GRANT ALL on *.* to account;
+GRANT ALL on *.* to 'account'@'localhost';
 FLUSH PRIVILEGES;
 ```
 You may also need to run:
